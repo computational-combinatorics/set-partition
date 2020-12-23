@@ -21,6 +21,37 @@ See [docs](https://aureooms.github.io/js-set-partition/index.html).
 > :warning: The code requires `regeneratorRuntime` to be defined, for instance by importing
 > [regenerator-runtime/runtime](https://www.npmjs.com/package/regenerator-runtime).
 
+```js
+import {range, map} from '@aureooms/js-itertools';
+import {partitions, npartitions, bell, isPartition} from '@aureooms/js-set-partition';
+
+partitions(range(0)); // []
+partitions(range(1)); // [[0]]
+partitions(range(2)); // [[0], [1]] [[0, 1]]
+
+npartitions(0); // 1
+npartitions(1); // 1
+npartitions(2); // 2
+npartitions(3); // 5
+npartitions(4); // 15
+npartitions(5); // 52
+npartitions(6); // 203
+npartitions(26); // 49631246523618756274n
+
+bell(); // 1 2 3 5 15 52 203 ...
+
+isPartition(range(5), [range(5)]); // true
+isPartition(range(5), map(x => [x], range(5))); // true
+isPartition(range(5), map(x => (function* () {yield x;})(), range(5))); // true
+isPartition(range(5), [[0], [1], [2], [3], [4]]); // true
+isPartition(range(5), [[0, 1], [2], [3], [4]]); // true
+isPartition(range(5), [[2, 1], [3], [0, 4]]); // true
+
+isPartition(range(5), [[], [0], [1], [2], [3], [4]]); // false
+isPartition(range(5), [[0], [0], [1], [2], [3], [4]]); // false
+isPartition(range(5), [[5], [0], [1], [2], [3], [4]]); // false
+```
+
 [![License](https://img.shields.io/github/license/aureooms/js-set-partition.svg)](https://raw.githubusercontent.com/aureooms/js-set-partition/main/LICENSE)
 [![Version](https://img.shields.io/npm/v/@aureooms/js-set-partition.svg)](https://www.npmjs.org/package/@aureooms/js-set-partition)
 [![Build](https://img.shields.io/travis/aureooms/js-set-partition/main.svg)](https://travis-ci.org/aureooms/js-set-partition/branches)
