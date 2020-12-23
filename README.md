@@ -1,6 +1,17 @@
 :bento: [@aureooms/js-set-partition](https://aureooms.github.io/js-set-partition)
 ==
 
+<p align="center">
+<a href="https://en.wikipedia.org/wiki/File:Set_partitions_4;_Hasse;_circles.svg">
+<img alt="The Zahlen symbol" src="https://upload.wikimedia.org/wikipedia/commons/3/32/Set_partitions_4%3B_Hasse%3B_circles.svg" width="300">
+</a><br/>
+<a href="https://commons.wikimedia.org/wiki/User:Watchduck">
+User:Watchduck
+</a>
+/
+<a href="https://creativecommons.org/licenses/by/3.0/deed.en">CC BY 3.0</a>
+</p>
+
 Set partition algorithms for JavaScript.
 See [docs](https://aureooms.github.io/js-set-partition/index.html).
 
