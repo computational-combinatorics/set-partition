@@ -75,9 +75,10 @@
   "bugs": {
     "url": "https://github.com/aureooms/js-set-partition/issues"
   },
-  "dependencies": {},
+  "dependencies": {
+    "@aureooms/js-itertools": "^4.1.0"
+  },
   "devDependencies": {
-    "@aureooms/js-itertools": "^4.1.0",
     "@babel/cli": "7.11.6",
     "@babel/core": "7.11.6",
     "@babel/preset-env": "7.11.5",
