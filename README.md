@@ -23,22 +23,25 @@ See [docs](https://aureooms.github.io/js-set-partition/index.html).
 
 ```js
 import {range, map} from '@aureooms/js-itertools';
-import {partitions, npartitions, bell, isPartition} from '@aureooms/js-set-partition';
+import {enumerate, count, sequence, isPartition} from '@aureooms/js-set-partition';
 
-partitions(range(0)); // []
-partitions(range(1)); // [[0]]
-partitions(range(2)); // [[0], [1]] [[0, 1]]
+enumerate(range(0)); // []
+enumerate(range(1)); // [[0]]
+enumerate(range(2)); // [[0], [1]] [[0, 1]]
 
-npartitions(0); // 1
-npartitions(1); // 1
-npartitions(2); // 2
-npartitions(3); // 5
-npartitions(4); // 15
-npartitions(5); // 52
-npartitions(6); // 203
-npartitions(26); // 49631246523618756274n
+count(0); // 1n
+count(1); // 1n
+count(2); // 2n
+count(3); // 5n
+count(4); // 15n
+count(5); // 52n
+count(6); // 203n
+count(26); // 49631246523618756274n
 
-bell(); // 1 2 3 5 15 52 203 ...
+_count(6); // 203
+_count(26); // ???
+
+sequence(); // 1n 1n 2n 3n 5n 15n 52n 203n ...
 
 isPartition(range(5), [range(5)]); // true
 isPartition(range(5), map(x => [x], range(5))); // true
