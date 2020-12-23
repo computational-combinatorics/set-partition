@@ -1,4 +1,4 @@
-[@aureooms/js-set-partition](https://aureooms.github.io/js-set-partition)
+:bento: [@aureooms/js-set-partition](https://aureooms.github.io/js-set-partition)
 ==
 
 Set partition algorithms for JavaScript.
