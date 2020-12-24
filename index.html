@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <base data-ice="baseUrl">
+  <title data-ice="title">Home | @aureooms/js-set-partition</title>
+  <link type="text/css" rel="stylesheet" href="css/style.css">
+  <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
+  <script src="script/prettify/prettify.js"></script>
+  <script src="script/manual.js"></script>
+<link rel="stylesheet" href="./inject/css/0-style.css"><script src="./inject/script/0-header.js"></script><meta name="description" content="Set partition algorithms for JavaScript"><meta property="twitter:card" content="summary"><meta property="twitter:title" content="@aureooms/js-set-partition"><meta property="twitter:description" content="Set partition algorithms for JavaScript"></head>
+<body class="layout-container" data-ice="rootContainer">
+
+<header>
+  <a href="./">Home</a>
+  <a href="./manual/index.html" data-ice="manualHeaderLink">Manual</a>
+  <a href="identifiers.html">Reference</a>
+  <a href="source.html">Source</a>
+  
+  <div class="search-box">
+  <span>
+    <img src="./image/search.png">
+    <span class="search-input-edge"></span><input class="search-input"><span class="search-input-edge"></span>
+  </span>
+    <ul class="search-result"></ul>
+  </div>
+<a style="position:relative; top:3px;" href="https://github.com/aureooms/js-set-partition"><img width="20px" src="./image/github.png"></a></header>
+
+<nav class="navigation" data-ice="nav"><div>
+  <ul>
+    
+  <li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-_count">_count</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-_enumerate">_enumerate</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-_sequence">_sequence</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-enumerate">enumerate</a></span></span></li>
+<li data-ice="doc"><span data-ice="kind" class="kind-function">F</span><span data-ice="name"><span><a href="function/index.html#static-function-isPartition">isPartition</a></span></span></li>
+</ul>
+</div>
+</nav>
+
+<div class="content" data-ice="content"><div data-ice="index" class="github-markdown"><h1 id="-bento---a-href--https---aureooms-github-io-js-set-partition---aureooms-js-set-partition--a-">:bento: <a href="https://aureooms.github.io/js-set-partition">@aureooms/js-set-partition</a></h1><p></p><p>
+<a href="https://en.wikipedia.org/wiki/File:Set_partitions_4;_Hasse;_circles.svg">
+<img src="https://upload.wikimedia.org/wikipedia/commons/3/32/Set_partitions_4%3B_Hasse%3B_circles.svg" width="300">
+</a><br>
+<a href="https://commons.wikimedia.org/wiki/User:Watchduck">
+User:Watchduck
+</a>
+/
+<a href="https://creativecommons.org/licenses/by/3.0/deed.en">CC BY 3.0</a>
+</p>
+
+<p></p>
+<p>Set partition algorithms for JavaScript.
+See <a href="https://aureooms.github.io/js-set-partition/index.html">docs</a>.</p>
+<blockquote>
+<p>:building_construction: Caveat emptor! This is work in progress. Code may be
+working. Documentation may be present. Coherence may be. Maybe.</p>
+</blockquote>
+<blockquote>
+<p>:warning: The code requires <code>regeneratorRuntime</code> to be defined, for instance by importing
+<a href="https://www.npmjs.com/package/regenerator-runtime">regenerator-runtime/runtime</a>.</p>
+</blockquote>
+<pre><code class="lang-js"><code class="source-code prettyprint">import {
+    enumerate,
+    count,
+    _count,
+    sequence,
+    _sequence,
+    isPartition
+} from &apos;@aureooms/js-set-partition&apos;;
+
+import {range, map} from &apos;@aureooms/js-itertools&apos;;
+
+enumerate(range(0)); // []
+enumerate(range(1)); // [[0]]
+enumerate(range(2)); // [[0], [1]] [[0, 1]]
+
+count(0); // 1n
+count(1); // 1n
+count(2); // 2n
+count(3); // 5n
+count(4); // 15n
+count(5); // 52n
+count(6); // 203n
+count(26); // 49631246523618756274n
+
+_count(1,6); // 203
+_count(1,26); // ???
+
+sequence(); // 1n 1n 2n 3n 5n 15n 52n 203n ...
+_sequence(1); // 1 1 2 3 5 15 52 203 ...
+
+isPartition(range(5), [range(5)]); // true
+isPartition(range(5), map(x =&gt; [x], range(5))); // true
+isPartition(range(5), map(x =&gt; (function* () {yield x;})(), range(5))); // true
+isPartition(range(5), [[0], [1], [2], [3], [4]]); // true
+isPartition(range(5), [[0, 1], [2], [3], [4]]); // true
+isPartition(range(5), [[2, 1], [3], [0, 4]]); // true
+
+isPartition(range(5), [[], [0], [1], [2], [3], [4]]); // false
+isPartition(range(5), [[0], [0], [1], [2], [3], [4]]); // false
+isPartition(range(5), [[5], [0], [1], [2], [3], [4]]); // false</code>
+</code></pre>
+<p><a href="https://raw.githubusercontent.com/aureooms/js-set-partition/main/LICENSE"><img src="https://img.shields.io/github/license/aureooms/js-set-partition.svg" alt="License"></a>
+<a href="https://www.npmjs.org/package/@aureooms/js-set-partition"><img src="https://img.shields.io/npm/v/@aureooms/js-set-partition.svg" alt="Version"></a>
+<a href="https://travis-ci.org/aureooms/js-set-partition/branches"><img src="https://img.shields.io/travis/aureooms/js-set-partition/main.svg" alt="Build"></a>
+<a href="https://david-dm.org/aureooms/js-set-partition"><img src="https://img.shields.io/david/aureooms/js-set-partition.svg" alt="Dependencies"></a>
+<a href="https://david-dm.org/aureooms/js-set-partition?type=dev"><img src="https://img.shields.io/david/dev/aureooms/js-set-partition.svg" alt="Dev dependencies"></a>
+<a href="https://github.com/aureooms/js-set-partition/issues"><img src="https://img.shields.io/github/issues/aureooms/js-set-partition.svg" alt="GitHub issues"></a>
+<a href="https://www.npmjs.org/package/@aureooms/js-set-partition"><img src="https://img.shields.io/npm/dm/@aureooms/js-set-partition.svg" alt="Downloads"></a></p>
+<p><a href="https://codeclimate.com/github/aureooms/js-set-partition/issues"><img src="https://img.shields.io/codeclimate/issues/aureooms/js-set-partition.svg" alt="Code issues"></a>
+<a href="https://codeclimate.com/github/aureooms/js-set-partition/trends/churn"><img src="https://img.shields.io/codeclimate/maintainability/aureooms/js-set-partition.svg" alt="Code maintainability"></a>
+<a href="https://codecov.io/gh/aureooms/js-set-partition"><img src="https://img.shields.io/codecov/c/gh/aureooms/js-set-partition/main.svg" alt="Code coverage (cov)"></a>
+<a href="https://codeclimate.com/github/aureooms/js-set-partition/trends/technical_debt"><img src="https://img.shields.io/codeclimate/tech-debt/aureooms/js-set-partition.svg" alt="Code technical debt"></a>
+<a href="https://aureooms.github.io/js-set-partition/source.html"><img src="https://aureooms.github.io/js-set-partition/badge.svg" alt="Documentation"></a>
+<a href="https://bundlephobia.com/result?p=@aureooms/js-set-partition"><img src="https://img.shields.io/bundlephobia/minzip/@aureooms/js-set-partition" alt="Package size"></a></p>
+</div>
+</div>
+
+<footer class="footer">
+  Generated by <a href="https://esdoc.org">ESDoc<span data-ice="esdocVersion">(1.1.0)</span><img src="./image/esdoc-logo-mini-black.png"></a>
+</footer>
+
+<script src="script/search_index.js"></script>
+<script src="script/search.js"></script>
+<script src="script/pretty-print.js"></script>
+<script src="script/inherited-summary.js"></script>
+<script src="script/test-summary.js"></script>
+<script src="script/inner-link.js"></script>
+<script src="script/patch-for-local.js"></script>
+</body>
+</html>
