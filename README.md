@@ -22,8 +22,16 @@ See [docs](https://aureooms.github.io/js-set-partition/index.html).
 > [regenerator-runtime/runtime](https://www.npmjs.com/package/regenerator-runtime).
 
 ```js
+import {
+	enumerate,
+	count,
+	_count,
+	sequence,
+	_sequence,
+	isPartition
+} from '@aureooms/js-set-partition';
+
 import {range, map} from '@aureooms/js-itertools';
-import {enumerate, count, sequence, isPartition} from '@aureooms/js-set-partition';
 
 enumerate(range(0)); // []
 enumerate(range(1)); // [[0]]
@@ -38,10 +46,11 @@ count(5); // 52n
 count(6); // 203n
 count(26); // 49631246523618756274n
 
-_count(6); // 203
-_count(26); // ???
+_count(1,6); // 203
+_count(1,26); // ???
 
 sequence(); // 1n 1n 2n 3n 5n 15n 52n 203n ...
+_sequence(1); // 1 1 2 3 5 15 52 203 ...
 
 isPartition(range(5), [range(5)]); // true
 isPartition(range(5), map(x => [x], range(5))); // true
@@ -66,8 +75,6 @@ isPartition(range(5), [[5], [0], [1], [2], [3], [4]]); // false
 [![Code issues](https://img.shields.io/codeclimate/issues/aureooms/js-set-partition.svg)](https://codeclimate.com/github/aureooms/js-set-partition/issues)
 [![Code maintainability](https://img.shields.io/codeclimate/maintainability/aureooms/js-set-partition.svg)](https://codeclimate.com/github/aureooms/js-set-partition/trends/churn)
 [![Code coverage (cov)](https://img.shields.io/codecov/c/gh/aureooms/js-set-partition/main.svg)](https://codecov.io/gh/aureooms/js-set-partition)
-<!--[![Code coverage (alls)](https://img.shields.io/coveralls/github/aureooms/js-set-partition/main.svg)](https://coveralls.io/r/aureooms/js-set-partition)-->
-<!--[![Code coverage (clim)](https://img.shields.io/codeclimate/coverage/aureooms/js-set-partition.svg)](https://codeclimate.com/github/aureooms/js-set-partition/trends/test_coverage_new_code)-->
 [![Code technical debt](https://img.shields.io/codeclimate/tech-debt/aureooms/js-set-partition.svg)](https://codeclimate.com/github/aureooms/js-set-partition/trends/technical_debt)
 [![Documentation](https://aureooms.github.io/js-set-partition/badge.svg)](https://aureooms.github.io/js-set-partition/source.html)
 [![Package size](https://img.shields.io/bundlephobia/minzip/@aureooms/js-set-partition)](https://bundlephobia.com/result?p=@aureooms/js-set-partition)

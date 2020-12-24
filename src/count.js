@@ -1,6 +1,4 @@
-import {nth} from '@aureooms/js-itertools';
+import _count from './_count';
 
-import sequence from './sequence';
-
-const count = (k) => nth(sequence(), k);
+const count = (k) => _count(1n, k);
 export default count;
