@@ -79,7 +79,7 @@
     "@aureooms/js-itertools": "^4.1.0"
   },
   "devDependencies": {
-    "@aureooms/js-red-black-tree": "2.0.7",
+    "@aureooms/js-red-black-tree": "3.0.1",
     "@babel/cli": "7.12.10",
     "@babel/core": "7.12.10",
     "@babel/preset-env": "7.12.11",
