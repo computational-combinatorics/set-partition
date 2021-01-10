@@ -79,7 +79,7 @@
     "@aureooms/js-itertools": "^4.1.0"
   },
   "devDependencies": {
-    "@aureooms/js-red-black-tree": "^2.0.7",
+    "@aureooms/js-red-black-tree": "2.0.7",
     "@babel/cli": "7.11.6",
     "@babel/core": "7.11.6",
     "@babel/preset-env": "7.11.5",
@@ -98,7 +98,7 @@
     "nyc": "15.1.0",
     "power-assert": "1.6.1",
     "regenerator-runtime": "0.13.7",
-    "total-order": "^0.0.3",
+    "total-order": "0.0.3",
     "xo": "0.33.1"
   },
   "files": [
