@@ -35,7 +35,7 @@
     "@aureooms/js-error" "^4.0.1"
     "@aureooms/js-itertools" "^4.1.0"
 
-"@aureooms/js-red-black-tree@^2.0.7":
+"@aureooms/js-red-black-tree@2.0.7":
   version "2.0.7"
   resolved "https://registry.yarnpkg.com/@aureooms/js-red-black-tree/-/js-red-black-tree-2.0.7.tgz#653ee108e3a31b038288f9d425f858c9415dbffd"
   integrity sha1-ZT7hCOOjGwOCiPnUJfhYyUFdv/0=
@@ -7814,7 +7814,7 @@ to-regex@^3.0.1, to-regex@^3.0.2:
     regex-not "^1.0.2"
     safe-regex "^1.1.0"
 
-total-order@^0.0.3:
+total-order@0.0.3:
   version "0.0.3"
   resolved "https://registry.yarnpkg.com/total-order/-/total-order-0.0.3.tgz#1befa517625a504058c039a01e9d403676ab0097"
   integrity sha512-JQjxkk8D+2wR4g8iqqJKZNLCnOdbqJizv5bi2N2kPu5noWe0Q4GxV1xsCkY6BvgpXYnItVd3DHgFjP1tUqeLkw==
