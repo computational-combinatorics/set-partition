@@ -76,7 +76,7 @@
     "url": "https://github.com/aureooms/js-set-partition/issues"
   },
   "dependencies": {
-    "@aureooms/js-itertools": "^4.1.0"
+    "@aureooms/js-itertools": "^5.0.0"
   },
   "devDependencies": {
     "@aureooms/js-red-black-tree": "3.0.1",
