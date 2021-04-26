@@ -73,7 +73,7 @@
     }
   },
   "bugs": {
-    "url": "https://github.com/aureooms/js-set-partition/issues"
+    "url": "https://github.com/make-github-pseudonymous-again/js-set-partition/issues"
   },
   "dependencies": {
     "@aureooms/js-itertools": "^5.0.0"
@@ -117,7 +117,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/aureooms/js-set-partition"
+    "url": "https://github.com/make-github-pseudonymous-again/js-set-partition"
   },
   "scripts": {
     "build": "babel --delete-dir-on-start --env-name production src -d lib",
