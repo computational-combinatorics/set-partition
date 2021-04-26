@@ -1,4 +1,4 @@
-:bento: [@aureooms/js-set-partition](https://aureooms.github.io/js-set-partition)
+:bento: [@aureooms/js-set-partition](https://make-github-pseudonymous-again.github.io/js-set-partition)
 ==
 
 <p align="center">
@@ -13,7 +13,7 @@ User:Watchduck
 </p>
 
 Set partition algorithms for JavaScript.
-See [docs](https://aureooms.github.io/js-set-partition/index.html).
+See [docs](https://make-github-pseudonymous-again.github.io/js-set-partition/index.html).
 
 > :building_construction: Caveat emptor! This is work in progress. Code may be
 > working. Documentation may be present. Coherence may be. Maybe.
@@ -76,5 +76,5 @@ isPartition(range(5), [[5], [0], [1], [2], [3], [4]]); // false
 [![Code maintainability](https://img.shields.io/codeclimate/maintainability/aureooms/js-set-partition.svg)](https://codeclimate.com/github/aureooms/js-set-partition/trends/churn)
 [![Code coverage (cov)](https://img.shields.io/codecov/c/gh/aureooms/js-set-partition/main.svg)](https://codecov.io/gh/aureooms/js-set-partition)
 [![Code technical debt](https://img.shields.io/codeclimate/tech-debt/aureooms/js-set-partition.svg)](https://codeclimate.com/github/aureooms/js-set-partition/trends/technical_debt)
-[![Documentation](https://aureooms.github.io/js-set-partition/badge.svg)](https://aureooms.github.io/js-set-partition/source.html)
+[![Documentation](https://make-github-pseudonymous-again.github.io/js-set-partition/badge.svg)](https://make-github-pseudonymous-again.github.io/js-set-partition/source.html)
 [![Package size](https://img.shields.io/bundlephobia/minzip/@aureooms/js-set-partition)](https://bundlephobia.com/result?p=@aureooms/js-set-partition)
