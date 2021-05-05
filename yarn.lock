@@ -55,10 +55,10 @@
     "@aureooms/js-error" "^4.0.1"
     "@aureooms/js-itertools" "^4.1.0"
 
-"@aureooms/js-red-black-tree@3.0.1":
-  version "3.0.1"
-  resolved "https://registry.yarnpkg.com/@aureooms/js-red-black-tree/-/js-red-black-tree-3.0.1.tgz#80b0cd9a4e611a6238dcaa3dd2a71eca61c55cde"
-  integrity sha512-93+j2eFGFP2AY6zPCbyWq9mu7ELf/O+BIm+94hbOfkC+8FUfDVeTiI5PgtxN1RQu3FB6KHMBOEZYsWZjDuMlZg==
+"@aureooms/js-red-black-tree@9.0.0":
+  version "9.0.0"
+  resolved "https://registry.yarnpkg.com/@aureooms/js-red-black-tree/-/js-red-black-tree-9.0.0.tgz#ee006f24af42749546232b2d0baa13910c98f7b2"
+  integrity sha512-sUtY0HnwQnBUjrfwysKc6H4BJO4O2+NnrUHLqTYJyT1l1VSI+oXGffjjmMJTFpIl4L/4FEZAN0L3BiQxgR1T8g==
 
 "@babel/cli@7.13.10":
   version "7.13.10"
