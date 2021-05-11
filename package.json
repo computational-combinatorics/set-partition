@@ -99,7 +99,7 @@
     "power-assert": "1.6.1",
     "regenerator-runtime": "0.13.7",
     "total-order": "0.0.3",
-    "xo": "0.33.1"
+    "xo": "0.40.1"
   },
   "files": [
     "lib"
