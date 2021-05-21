@@ -18,12 +18,25 @@
     "set"
   ],
   "sideEffects": false,
-  "main": "lib/index.js",
+  "source": "src/index.js",
+  "main": "dist/index.js",
+  "module": "dist/index.module.js",
+  "esmodule": "dist/index.modern.js",
+  "umd:main": "dist/index.umd.js",
+  "unpkg": "dist/index.umd.js",
+  "exports": {
+    ".": {
+      "browser": "./dist/index.module.js",
+      "umd": "./dist/index.umd.js",
+      "require": "./dist/index.js",
+      "default": "./dist/index.modern.js"
+    }
+  },
   "files": [
-    "lib"
+    "dist"
   ],
   "scripts": {
-    "build": "babel --delete-dir-on-start --env-name production src -d lib",
+    "build": "NODE_ENV=production microbundle",
     "build-docs": "esdoc",
     "build-gh-pages": "npm run build-docs",
     "commit-msg": "commitlint --edit",
@@ -48,7 +61,6 @@
   },
   "devDependencies": {
     "@aureooms/js-red-black-tree": "9.0.0",
-    "@babel/cli": "7.14.3",
     "@babel/core": "7.14.3",
     "@babel/preset-env": "7.14.2",
     "@babel/register": "7.13.16",
@@ -70,6 +82,7 @@
     "esdoc-standard-plugin": "1.0.0",
     "fixpack": "4.0.0",
     "husky": "6.0.0",
+    "microbundle": "0.13.0",
     "np": "7.5.0",
     "pinst": "2.1.6",
     "power-assert": "1.6.1",
