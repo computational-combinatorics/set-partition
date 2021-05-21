@@ -1,3 +1,3 @@
 # Examples
 
-> More examples in [the test files](https://github.com/make-github-pseudonymous-again/js-set-partition/tree/main/test/src).
+> More examples in [the test files](https://github.com/computational-combinatorics/set-partition/tree/main/test/src).
