@@ -2,7 +2,71 @@
   "name": "@combinatorics/set-partition",
   "description": "Set partition algorithms for JavaScript",
   "version": "0.0.1",
+  "license": "AGPL-3.0",
   "author": "make-github-pseudonymous-again",
+  "homepage": "https://computational-combinatorics.github.io/set-partition",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/computational-combinatorics/set-partition"
+  },
+  "bugs": {
+    "url": "https://github.com/computational-combinatorics/set-partition/issues"
+  },
+  "keywords": [
+    "choose",
+    "partition",
+    "set"
+  ],
+  "sideEffects": false,
+  "main": "lib/index.js",
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "build": "babel --delete-dir-on-start --env-name production src -d lib",
+    "cover": "nyc --reporter=lcov npm test",
+    "dev": "npm run lint -- --fix && npm run cover -- -- -st --fail-fast",
+    "esdoc": "esdoc",
+    "lint": "xo",
+    "lint-config": "fixpack --dryRun",
+    "lint-config-and-fix": "fixpack || fixpack",
+    "prepare": "npm run build",
+    "release": "np",
+    "test": "ava",
+    "travis": "npm run lint && npm run cover"
+  },
+  "dependencies": {
+    "@iterable-iterator/list": "^0.0.2",
+    "@iterable-iterator/map": "^0.1.0",
+    "@iterable-iterator/select": "^0.0.1"
+  },
+  "devDependencies": {
+    "@aureooms/js-red-black-tree": "9.0.0",
+    "@babel/cli": "7.14.3",
+    "@babel/core": "7.14.3",
+    "@babel/preset-env": "7.14.2",
+    "@babel/register": "7.13.16",
+    "@iterable-iterator/iter": "^0.0.2",
+    "@iterable-iterator/range": "^1.0.0",
+    "@iterable-iterator/slice": "^0.0.1",
+    "ava": "3.15.0",
+    "babel-plugin-transform-remove-console": "6.9.4",
+    "babel-plugin-unassert": "3.1.0",
+    "babel-preset-power-assert": "3.0.0",
+    "coveralls": "3.1.0",
+    "esdoc": "1.1.0",
+    "esdoc-ecmascript-proposal-plugin": "1.0.0",
+    "esdoc-inject-script-plugin": "1.0.0",
+    "esdoc-inject-style-plugin": "1.0.0",
+    "esdoc-standard-plugin": "1.0.0",
+    "fixpack": "4.0.0",
+    "np": "7.5.0",
+    "nyc": "15.1.0",
+    "power-assert": "1.6.1",
+    "regenerator-runtime": "0.13.7",
+    "total-order": "3.0.1",
+    "xo": "0.40.1"
+  },
   "ava": {
     "files": [
       "test/src/**/*"
@@ -72,73 +136,9 @@
       }
     }
   },
-  "bugs": {
-    "url": "https://github.com/computational-combinatorics/set-partition/issues"
-  },
-  "dependencies": {
-    "@iterable-iterator/list": "^0.0.2",
-    "@iterable-iterator/map": "^0.1.0",
-    "@iterable-iterator/select": "^0.0.1"
-  },
-  "devDependencies": {
-    "@aureooms/js-red-black-tree": "9.0.0",
-    "@babel/cli": "7.14.3",
-    "@babel/core": "7.14.3",
-    "@babel/preset-env": "7.14.2",
-    "@babel/register": "7.13.16",
-    "@iterable-iterator/iter": "^0.0.2",
-    "@iterable-iterator/range": "^1.0.0",
-    "@iterable-iterator/slice": "^0.0.1",
-    "ava": "3.15.0",
-    "babel-plugin-transform-remove-console": "6.9.4",
-    "babel-plugin-unassert": "3.1.0",
-    "babel-preset-power-assert": "3.0.0",
-    "coveralls": "3.1.0",
-    "esdoc": "1.1.0",
-    "esdoc-ecmascript-proposal-plugin": "1.0.0",
-    "esdoc-inject-script-plugin": "1.0.0",
-    "esdoc-inject-style-plugin": "1.0.0",
-    "esdoc-standard-plugin": "1.0.0",
-    "np": "7.5.0",
-    "nyc": "15.1.0",
-    "power-assert": "1.6.1",
-    "regenerator-runtime": "0.13.7",
-    "total-order": "3.0.1",
-    "xo": "0.40.1",
-    "fixpack": "4.0.0"
-  },
-  "files": [
-    "lib"
-  ],
-  "homepage": "https://computational-combinatorics.github.io/set-partition",
-  "keywords": [
-    "choose",
-    "partition",
-    "set"
-  ],
-  "license": "AGPL-3.0",
-  "main": "lib/index.js",
   "prettier": {
     "trailingComma": "all"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/computational-combinatorics/set-partition"
-  },
-  "scripts": {
-    "build": "babel --delete-dir-on-start --env-name production src -d lib",
-    "cover": "nyc --reporter=lcov npm test",
-    "dev": "npm run lint -- --fix && npm run cover -- -- -st --fail-fast",
-    "esdoc": "esdoc",
-    "lint": "xo",
-    "prepare": "npm run build",
-    "release": "np",
-    "test": "ava",
-    "travis": "npm run lint && npm run cover",
-    "lint-config-and-fix": "fixpack || fixpack",
-    "lint-config": "fixpack --dryRun"
-  },
-  "sideEffects": false,
   "xo": {
     "prettier": true,
     "ignores": [
