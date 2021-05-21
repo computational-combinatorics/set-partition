@@ -3,7 +3,7 @@ import test from 'ava';
 import {list} from '@iterable-iterator/list';
 import {take} from '@iterable-iterator/slice';
 
-import {sequence, _sequence} from '../../src';
+import {sequence, _sequence} from '../../src/index.js';
 
 test('sequence()', (t) => {
 	const expected = [1n, 1n, 2n, 5n, 15n, 52n, 203n];

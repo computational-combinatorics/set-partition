@@ -5,7 +5,7 @@ import {list} from '@iterable-iterator/list';
 import {range} from '@iterable-iterator/range';
 import {map} from '@iterable-iterator/map';
 
-import {isPartition} from '../../src';
+import {isPartition} from '../../src/index.js';
 
 const macro = (t, set, partition, is) => {
 	t.is(isPartition(set, partition), is, 'isPartition(set, partition)');

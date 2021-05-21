@@ -1,6 +1,6 @@
 import test from 'ava';
 
-import {count, _count} from '../../src';
+import {count, _count} from '../../src/index.js';
 
 const macro = (t, k, Bk) => {
 	t.is(count(k), Bk);
