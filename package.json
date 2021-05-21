@@ -40,7 +40,7 @@
     "build-docs": "esdoc",
     "build-gh-pages": "npm run build-docs",
     "commit-msg": "commitlint --edit",
-    "cover": "NODE_ENV=cover c8 --all --src src --reporter=lcov npm test",
+    "cover": "NODE_ENV=cover c8 --all --src src --reporter lcov --reporter text-summary --reporter text npm test",
     "dev": "npm run lint -- --fix && npm run cover -- -- -st --fail-fast",
     "install-hooks": "husky install",
     "lint": "xo",
