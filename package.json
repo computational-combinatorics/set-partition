@@ -1,8 +1,8 @@
 {
-  "name": "@aureooms/js-set-partition",
+  "name": "@combinatorics/set-partition",
   "description": "Set partition algorithms for JavaScript",
   "version": "0.0.1",
-  "author": "aureooms",
+  "author": "make-github-pseudonymous-again",
   "ava": {
     "files": [
       "test/src/**/*"
@@ -73,7 +73,7 @@
     }
   },
   "bugs": {
-    "url": "https://github.com/make-github-pseudonymous-again/js-set-partition/issues"
+    "url": "https://github.com/computational-combinatorics/set-partition/issues"
   },
   "dependencies": {
     "@aureooms/js-itertools": "^5.0.0"
@@ -104,7 +104,7 @@
   "files": [
     "lib"
   ],
-  "homepage": "https://make-github-pseudonymous-again.github.io/js-set-partition",
+  "homepage": "https://computational-combinatorics.github.io/set-partition",
   "keywords": [
     "choose",
     "partition",
@@ -117,7 +117,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/make-github-pseudonymous-again/js-set-partition"
+    "url": "https://github.com/computational-combinatorics/set-partition"
   },
   "scripts": {
     "build": "babel --delete-dir-on-start --env-name production src -d lib",

@@ -1,4 +1,4 @@
-:bento: [@aureooms/js-set-partition](https://make-github-pseudonymous-again.github.io/js-set-partition)
+:bento: [@combinatorics/set-partition](https://computational-combinatorics.github.io/set-partition)
 ==
 
 <p align="center">
@@ -13,7 +13,7 @@ User:Watchduck
 </p>
 
 Set partition algorithms for JavaScript.
-See [docs](https://make-github-pseudonymous-again.github.io/js-set-partition/index.html).
+See [docs](https://computational-combinatorics.github.io/set-partition/index.html).
 
 > :building_construction: Caveat emptor! This is work in progress. Code may be
 > working. Documentation may be present. Coherence may be. Maybe.
@@ -29,7 +29,7 @@ import {
 	sequence,
 	_sequence,
 	isPartition
-} from '@aureooms/js-set-partition';
+} from '@combinatorics/set-partition';
 
 import {range, map} from '@aureooms/js-itertools';
 
@@ -64,17 +64,17 @@ isPartition(range(5), [[0], [0], [1], [2], [3], [4]]); // false
 isPartition(range(5), [[5], [0], [1], [2], [3], [4]]); // false
 ```
 
-[![License](https://img.shields.io/github/license/make-github-pseudonymous-again/js-set-partition.svg)](https://raw.githubusercontent.com/make-github-pseudonymous-again/js-set-partition/main/LICENSE)
-[![Version](https://img.shields.io/npm/v/@aureooms/js-set-partition.svg)](https://www.npmjs.org/package/@aureooms/js-set-partition)
-[![Build](https://img.shields.io/travis/make-github-pseudonymous-again/js-set-partition/main.svg)](https://travis-ci.org/make-github-pseudonymous-again/js-set-partition/branches)
-[![Dependencies](https://img.shields.io/david/make-github-pseudonymous-again/js-set-partition.svg)](https://david-dm.org/make-github-pseudonymous-again/js-set-partition)
-[![Dev dependencies](https://img.shields.io/david/dev/make-github-pseudonymous-again/js-set-partition.svg)](https://david-dm.org/make-github-pseudonymous-again/js-set-partition?type=dev)
-[![GitHub issues](https://img.shields.io/github/issues/make-github-pseudonymous-again/js-set-partition.svg)](https://github.com/make-github-pseudonymous-again/js-set-partition/issues)
-[![Downloads](https://img.shields.io/npm/dm/@aureooms/js-set-partition.svg)](https://www.npmjs.org/package/@aureooms/js-set-partition)
+[![License](https://img.shields.io/github/license/computational-combinatorics/set-partition.svg)](https://raw.githubusercontent.com/computational-combinatorics/set-partition/main/LICENSE)
+[![Version](https://img.shields.io/npm/v/@combinatorics/set-partition.svg)](https://www.npmjs.org/package/@combinatorics/set-partition)
+[![Build](https://img.shields.io/travis/computational-combinatorics/set-partition/main.svg)](https://travis-ci.org/computational-combinatorics/set-partition/branches)
+[![Dependencies](https://img.shields.io/david/computational-combinatorics/set-partition.svg)](https://david-dm.org/computational-combinatorics/set-partition)
+[![Dev dependencies](https://img.shields.io/david/dev/computational-combinatorics/set-partition.svg)](https://david-dm.org/computational-combinatorics/set-partition?type=dev)
+[![GitHub issues](https://img.shields.io/github/issues/computational-combinatorics/set-partition.svg)](https://github.com/computational-combinatorics/set-partition/issues)
+[![Downloads](https://img.shields.io/npm/dm/@combinatorics/set-partition.svg)](https://www.npmjs.org/package/@combinatorics/set-partition)
 
-[![Code issues](https://img.shields.io/codeclimate/issues/make-github-pseudonymous-again/js-set-partition.svg)](https://codeclimate.com/github/make-github-pseudonymous-again/js-set-partition/issues)
-[![Code maintainability](https://img.shields.io/codeclimate/maintainability/make-github-pseudonymous-again/js-set-partition.svg)](https://codeclimate.com/github/make-github-pseudonymous-again/js-set-partition/trends/churn)
-[![Code coverage (cov)](https://img.shields.io/codecov/c/gh/make-github-pseudonymous-again/js-set-partition/main.svg)](https://codecov.io/gh/make-github-pseudonymous-again/js-set-partition)
-[![Code technical debt](https://img.shields.io/codeclimate/tech-debt/make-github-pseudonymous-again/js-set-partition.svg)](https://codeclimate.com/github/make-github-pseudonymous-again/js-set-partition/trends/technical_debt)
-[![Documentation](https://make-github-pseudonymous-again.github.io/js-set-partition/badge.svg)](https://make-github-pseudonymous-again.github.io/js-set-partition/source.html)
-[![Package size](https://img.shields.io/bundlephobia/minzip/@aureooms/js-set-partition)](https://bundlephobia.com/result?p=@aureooms/js-set-partition)
+[![Code issues](https://img.shields.io/codeclimate/issues/computational-combinatorics/set-partition.svg)](https://codeclimate.com/github/computational-combinatorics/set-partition/issues)
+[![Code maintainability](https://img.shields.io/codeclimate/maintainability/computational-combinatorics/set-partition.svg)](https://codeclimate.com/github/computational-combinatorics/set-partition/trends/churn)
+[![Code coverage (cov)](https://img.shields.io/codecov/c/gh/computational-combinatorics/set-partition/main.svg)](https://codecov.io/gh/computational-combinatorics/set-partition)
+[![Code technical debt](https://img.shields.io/codeclimate/tech-debt/computational-combinatorics/set-partition.svg)](https://codeclimate.com/github/computational-combinatorics/set-partition/trends/technical_debt)
+[![Documentation](https://computational-combinatorics.github.io/set-partition/badge.svg)](https://computational-combinatorics.github.io/set-partition/source.html)
+[![Package size](https://img.shields.io/bundlephobia/minzip/@combinatorics/set-partition)](https://bundlephobia.com/result?p=@combinatorics/set-partition)

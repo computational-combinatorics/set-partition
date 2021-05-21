@@ -12,7 +12,7 @@ import 'regenerator-runtime/runtime.js' ;
 
 Then, import the library where needed
 ```js
-const setpartition = require( '@aureooms/js-set-partition' ) ;
+const setpartition = require( '@combinatorics/set-partition' ) ;
 // or
-import * as setpartition from '@aureooms/js-set-partition' ;
+import * as setpartition from '@combinatorics/set-partition' ;
 ```

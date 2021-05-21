@@ -13,7 +13,7 @@
           "autoPrivate": true
         },
         "brand": {
-          "title": "@aureooms/js-set-partition"
+          "title": "@combinatorics/set-partition"
         },
         "test": {
           "type": "ava",

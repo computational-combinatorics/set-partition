@@ -8,15 +8,15 @@ or [jspm](https://jspm.org/docs).
 
 ### yarn
 ```terminal
-yarn add @aureooms/js-set-partition
+yarn add @combinatorics/set-partition
 ```
 
 ### npm
 ```terminal
-npm install @aureooms/js-set-partition --save
+npm install @combinatorics/set-partition --save
 ```
 
 ### jspm
 ```terminal
-jspm install npm:@aureooms/js-set-partition
+jspm install npm:@combinatorics/set-partition
 ```
