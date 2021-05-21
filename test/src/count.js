@@ -15,7 +15,7 @@ test(macro, 3, 5n);
 test(macro, 4, 15n);
 test(macro, 5, 52n);
 test(macro, 6, 203n);
-test(macro, 26, 49631246523618756274n);
+test(macro, 26, 49_631_246_523_618_756_274n);
 
 const _macro = (t, k, Bk) => {
 	t.is(_count(1, k), Bk);
