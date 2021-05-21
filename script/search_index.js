@@ -1,32 +1,32 @@
 window.esdocSearchIndex = [
   [
-    "@aureooms/js-set-partition/src/_count.js~_count",
+    "@combinatorics/set-partition/src/_count.js~_count",
     "function/index.html#static-function-_count",
-    "<span>_count</span> <span class=\"search-result-import-path\">@aureooms/js-set-partition/src/_count.js</span>",
+    "<span>_count</span> <span class=\"search-result-import-path\">@combinatorics/set-partition/src/_count.js</span>",
     "function"
   ],
   [
-    "@aureooms/js-set-partition/src/_enumerate.js~_enumerate",
+    "@combinatorics/set-partition/src/_enumerate.js~_enumerate",
     "function/index.html#static-function-_enumerate",
-    "<span>_enumerate</span> <span class=\"search-result-import-path\">@aureooms/js-set-partition/src/_enumerate.js</span>",
+    "<span>_enumerate</span> <span class=\"search-result-import-path\">@combinatorics/set-partition/src/_enumerate.js</span>",
     "function"
   ],
   [
-    "@aureooms/js-set-partition/src/_sequence.js~_sequence",
+    "@combinatorics/set-partition/src/_sequence.js~_sequence",
     "function/index.html#static-function-_sequence",
-    "<span>_sequence</span> <span class=\"search-result-import-path\">@aureooms/js-set-partition/src/_sequence.js</span>",
+    "<span>_sequence</span> <span class=\"search-result-import-path\">@combinatorics/set-partition/src/_sequence.js</span>",
     "function"
   ],
   [
-    "@aureooms/js-set-partition/src/enumerate.js~enumerate",
+    "@combinatorics/set-partition/src/enumerate.js~enumerate",
     "function/index.html#static-function-enumerate",
-    "<span>enumerate</span> <span class=\"search-result-import-path\">@aureooms/js-set-partition/src/enumerate.js</span>",
+    "<span>enumerate</span> <span class=\"search-result-import-path\">@combinatorics/set-partition/src/enumerate.js</span>",
     "function"
   ],
   [
-    "@aureooms/js-set-partition/src/ispartition.js~ispartition",
+    "@combinatorics/set-partition/src/ispartition.js~ispartition",
     "function/index.html#static-function-isPartition",
-    "<span>isPartition</span> <span class=\"search-result-import-path\">@aureooms/js-set-partition/src/isPartition.js</span>",
+    "<span>isPartition</span> <span class=\"search-result-import-path\">@combinatorics/set-partition/src/isPartition.js</span>",
     "function"
   ],
   [

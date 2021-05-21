@@ -14,7 +14,7 @@
       "expectCount": 1,
       "actualCount": 0,
       "undocumentLines": [
-        3
+        4
       ]
     },
     "src/_sequence.js": {

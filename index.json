@@ -567,9 +567,9 @@
     "__docId__": 48,
     "kind": "file",
     "name": "src/_count.js",
-    "content": "import {nth} from '@aureooms/js-itertools';\n\nimport _sequence from './_sequence';\n\nconst _count = (init, k) => nth(_sequence(init), k);\nexport default _count;\n",
+    "content": "import {nth} from '@iterable-iterator/select';\n\nimport _sequence from './_sequence.js';\n\nconst _count = (init, k) => nth(_sequence(init), k);\nexport default _count;\n",
     "static": true,
-    "longname": "/home/aureooms/dev/js/packages/algorithms/js-set-partition/src/_count.js",
+    "longname": "/home/runner/work/set-partition/set-partition/src/_count.js",
     "access": "public",
     "description": null,
     "lineNumber": 1
@@ -585,7 +585,7 @@
     "longname": "src/_count.js~_count",
     "access": "private",
     "export": true,
-    "importPath": "@aureooms/js-set-partition/src/_count.js",
+    "importPath": "@combinatorics/set-partition/src/_count.js",
     "importStyle": "_count",
     "description": null,
     "lineNumber": 5,
@@ -610,9 +610,9 @@
     "__docId__": 50,
     "kind": "file",
     "name": "src/_enumerate.js",
-    "content": "import {list, map} from '@aureooms/js-itertools';\n\nexport default function* _enumerate(elements, n = elements.length) {\n\tif (n === 0) yield [];\n\telse {\n\t\tconst last = elements[n - 1];\n\t\tfor (const partition of _enumerate(elements, n - 1)) {\n\t\t\tyield partition.concat([[last]]);\n\t\t\tfor (const part of partition) {\n\t\t\t\tyield list(map((p) => (p === part ? p.concat([last]) : p), partition));\n\t\t\t}\n\t\t}\n\t}\n}\n",
+    "content": "import {list} from '@iterable-iterator/list';\nimport {map} from '@iterable-iterator/map';\n\nexport default function* _enumerate(elements, n = elements.length) {\n\tif (n === 0) yield [];\n\telse {\n\t\tconst last = elements[n - 1];\n\t\tfor (const partition of _enumerate(elements, n - 1)) {\n\t\t\tyield partition.concat([[last]]);\n\t\t\tfor (const part of partition) {\n\t\t\t\tyield list(map((p) => (p === part ? p.concat([last]) : p), partition));\n\t\t\t}\n\t\t}\n\t}\n}\n",
     "static": true,
-    "longname": "/home/aureooms/dev/js/packages/algorithms/js-set-partition/src/_enumerate.js",
+    "longname": "/home/runner/work/set-partition/set-partition/src/_enumerate.js",
     "access": "public",
     "description": null,
     "lineNumber": 1
@@ -628,10 +628,10 @@
     "longname": "src/_enumerate.js~_enumerate",
     "access": "private",
     "export": true,
-    "importPath": "@aureooms/js-set-partition/src/_enumerate.js",
+    "importPath": "@combinatorics/set-partition/src/_enumerate.js",
     "importStyle": "_enumerate",
     "description": null,
-    "lineNumber": 3,
+    "lineNumber": 4,
     "undocument": true,
     "params": [
       {
@@ -656,7 +656,7 @@
     "name": "src/_sequence.js",
     "content": "export default function* _sequence(init) {\n\tyield init;\n\tconst a = [init];\n\twhile (true) {\n\t\tconst n = a.length;\n\t\tlet current = a[n - 1];\n\t\tyield current;\n\t\tfor (let i = 0; i < n; ++i) {\n\t\t\tconst next = current + a[i];\n\t\t\ta[i] = current;\n\t\t\tcurrent = next;\n\t\t}\n\n\t\ta.push(current);\n\t}\n}\n",
     "static": true,
-    "longname": "/home/aureooms/dev/js/packages/algorithms/js-set-partition/src/_sequence.js",
+    "longname": "/home/runner/work/set-partition/set-partition/src/_sequence.js",
     "access": "public",
     "description": null,
     "lineNumber": 1
@@ -672,7 +672,7 @@
     "longname": "src/_sequence.js~_sequence",
     "access": "private",
     "export": true,
-    "importPath": "@aureooms/js-set-partition/src/_sequence.js",
+    "importPath": "@combinatorics/set-partition/src/_sequence.js",
     "importStyle": "_sequence",
     "description": null,
     "lineNumber": 1,
@@ -691,9 +691,9 @@
     "__docId__": 54,
     "kind": "file",
     "name": "src/enumerate.js",
-    "content": "import {list} from '@aureooms/js-itertools';\n\nimport _enumerate from './_enumerate';\n\nexport default function enumerate(elements) {\n\treturn _enumerate(list(elements));\n}\n",
+    "content": "import {list} from '@iterable-iterator/list';\n\nimport _enumerate from './_enumerate.js';\n\nconst enumerate = (elements) => _enumerate(list(elements));\nexport default enumerate;\n",
     "static": true,
-    "longname": "/home/aureooms/dev/js/packages/algorithms/js-set-partition/src/enumerate.js",
+    "longname": "/home/runner/work/set-partition/set-partition/src/enumerate.js",
     "access": "public",
     "description": null,
     "lineNumber": 1
@@ -709,7 +709,7 @@
     "longname": "src/enumerate.js~enumerate",
     "access": "public",
     "export": true,
-    "importPath": "@aureooms/js-set-partition/src/enumerate.js",
+    "importPath": "@combinatorics/set-partition/src/enumerate.js",
     "importStyle": "enumerate",
     "description": null,
     "lineNumber": 5,
@@ -722,19 +722,15 @@
         ]
       }
     ],
-    "return": {
-      "types": [
-        "*"
-      ]
-    }
+    "return": null
   },
   {
     "__docId__": 56,
     "kind": "file",
     "name": "src/index.js",
-    "content": "import _count from './_count';\nimport _enumerate from './_enumerate';\nimport _sequence from './_sequence';\nimport count from './count';\nimport enumerate from './enumerate';\nimport isPartition from './isPartition';\nimport sequence from './sequence';\n\n/* eslint import/no-anonymous-default-export: [2, {\"allowObject\": true}] */\nexport default {\n\t_count,\n\t_enumerate,\n\t_sequence,\n\tcount,\n\tenumerate,\n\tisPartition,\n\tsequence,\n};\n\nexport {_count, _enumerate, _sequence, count, enumerate, isPartition, sequence};\n",
+    "content": "export {default as _count} from './_count.js';\nexport {default as _enumerate} from './_enumerate.js';\nexport {default as _sequence} from './_sequence.js';\nexport {default as count} from './count.js';\nexport {default as enumerate} from './enumerate.js';\nexport {default as isPartition} from './isPartition.js';\nexport {default as sequence} from './sequence.js';\n",
     "static": true,
-    "longname": "/home/aureooms/dev/js/packages/algorithms/js-set-partition/src/index.js",
+    "longname": "/home/runner/work/set-partition/set-partition/src/index.js",
     "access": "public",
     "description": null,
     "lineNumber": 1
@@ -745,7 +741,7 @@
     "name": "src/isPartition.js",
     "content": "const isPartition = (elements, partition) => {\n\tconst notyetseen = new Set(elements);\n\n\tfor (const part of partition) {\n\t\tlet partIsEmptySet = true;\n\t\tfor (const element of part) {\n\t\t\tpartIsEmptySet = false;\n\t\t\tif (notyetseen.has(element)) notyetseen.delete(element);\n\t\t\telse return false;\n\t\t}\n\n\t\tif (partIsEmptySet) return false;\n\t}\n\n\treturn notyetseen.size === 0;\n};\n\nexport default isPartition;\n",
     "static": true,
-    "longname": "/home/aureooms/dev/js/packages/algorithms/js-set-partition/src/isPartition.js",
+    "longname": "/home/runner/work/set-partition/set-partition/src/isPartition.js",
     "access": "public",
     "description": null,
     "lineNumber": 1
@@ -761,7 +757,7 @@
     "longname": "src/isPartition.js~isPartition",
     "access": "public",
     "export": true,
-    "importPath": "@aureooms/js-set-partition/src/isPartition.js",
+    "importPath": "@combinatorics/set-partition/src/isPartition.js",
     "importStyle": "isPartition",
     "description": null,
     "lineNumber": 1,
@@ -788,16 +784,16 @@
   },
   {
     "kind": "index",
-    "content": ":bento: [@aureooms/js-set-partition](https://aureooms.github.io/js-set-partition)\n==\n\n<p align=\"center\">\n<a href=\"https://en.wikipedia.org/wiki/File:Set_partitions_4;_Hasse;_circles.svg\">\n<img alt=\"The Zahlen symbol\" src=\"https://upload.wikimedia.org/wikipedia/commons/3/32/Set_partitions_4%3B_Hasse%3B_circles.svg\" width=\"300\">\n</a><br/>\n<a href=\"https://commons.wikimedia.org/wiki/User:Watchduck\">\nUser:Watchduck\n</a>\n/\n<a href=\"https://creativecommons.org/licenses/by/3.0/deed.en\">CC BY 3.0</a>\n</p>\n\nSet partition algorithms for JavaScript.\nSee [docs](https://aureooms.github.io/js-set-partition/index.html).\n\n> :building_construction: Caveat emptor! This is work in progress. Code may be\n> working. Documentation may be present. Coherence may be. Maybe.\n\n> :warning: The code requires `regeneratorRuntime` to be defined, for instance by importing\n> [regenerator-runtime/runtime](https://www.npmjs.com/package/regenerator-runtime).\n\n```js\nimport {\n\tenumerate,\n\tcount,\n\t_count,\n\tsequence,\n\t_sequence,\n\tisPartition\n} from '@aureooms/js-set-partition';\n\nimport {range, map} from '@aureooms/js-itertools';\n\nenumerate(range(0)); // []\nenumerate(range(1)); // [[0]]\nenumerate(range(2)); // [[0], [1]] [[0, 1]]\n\ncount(0); // 1n\ncount(1); // 1n\ncount(2); // 2n\ncount(3); // 5n\ncount(4); // 15n\ncount(5); // 52n\ncount(6); // 203n\ncount(26); // 49631246523618756274n\n\n_count(1,6); // 203\n_count(1,26); // ???\n\nsequence(); // 1n 1n 2n 3n 5n 15n 52n 203n ...\n_sequence(1); // 1 1 2 3 5 15 52 203 ...\n\nisPartition(range(5), [range(5)]); // true\nisPartition(range(5), map(x => [x], range(5))); // true\nisPartition(range(5), map(x => (function* () {yield x;})(), range(5))); // true\nisPartition(range(5), [[0], [1], [2], [3], [4]]); // true\nisPartition(range(5), [[0, 1], [2], [3], [4]]); // true\nisPartition(range(5), [[2, 1], [3], [0, 4]]); // true\n\nisPartition(range(5), [[], [0], [1], [2], [3], [4]]); // false\nisPartition(range(5), [[0], [0], [1], [2], [3], [4]]); // false\nisPartition(range(5), [[5], [0], [1], [2], [3], [4]]); // false\n```\n\n[![License](https://img.shields.io/github/license/aureooms/js-set-partition.svg)](https://raw.githubusercontent.com/aureooms/js-set-partition/main/LICENSE)\n[![Version](https://img.shields.io/npm/v/@aureooms/js-set-partition.svg)](https://www.npmjs.org/package/@aureooms/js-set-partition)\n[![Build](https://img.shields.io/travis/aureooms/js-set-partition/main.svg)](https://travis-ci.org/aureooms/js-set-partition/branches)\n[![Dependencies](https://img.shields.io/david/aureooms/js-set-partition.svg)](https://david-dm.org/aureooms/js-set-partition)\n[![Dev dependencies](https://img.shields.io/david/dev/aureooms/js-set-partition.svg)](https://david-dm.org/aureooms/js-set-partition?type=dev)\n[![GitHub issues](https://img.shields.io/github/issues/aureooms/js-set-partition.svg)](https://github.com/aureooms/js-set-partition/issues)\n[![Downloads](https://img.shields.io/npm/dm/@aureooms/js-set-partition.svg)](https://www.npmjs.org/package/@aureooms/js-set-partition)\n\n[![Code issues](https://img.shields.io/codeclimate/issues/aureooms/js-set-partition.svg)](https://codeclimate.com/github/aureooms/js-set-partition/issues)\n[![Code maintainability](https://img.shields.io/codeclimate/maintainability/aureooms/js-set-partition.svg)](https://codeclimate.com/github/aureooms/js-set-partition/trends/churn)\n[![Code coverage (cov)](https://img.shields.io/codecov/c/gh/aureooms/js-set-partition/main.svg)](https://codecov.io/gh/aureooms/js-set-partition)\n[![Code technical debt](https://img.shields.io/codeclimate/tech-debt/aureooms/js-set-partition.svg)](https://codeclimate.com/github/aureooms/js-set-partition/trends/technical_debt)\n[![Documentation](https://aureooms.github.io/js-set-partition/badge.svg)](https://aureooms.github.io/js-set-partition/source.html)\n[![Package size](https://img.shields.io/bundlephobia/minzip/@aureooms/js-set-partition)](https://bundlephobia.com/result?p=@aureooms/js-set-partition)\n",
-    "longname": "/home/aureooms/dev/js/packages/algorithms/js-set-partition/README.md",
+    "content": ":bento: [@combinatorics/set-partition](https://computational-combinatorics.github.io/set-partition)\n==\n\n<p align=\"center\">\n<a href=\"https://en.wikipedia.org/wiki/File:Set_partitions_4;_Hasse;_circles.svg\">\n<img alt=\"The Zahlen symbol\" src=\"https://upload.wikimedia.org/wikipedia/commons/3/32/Set_partitions_4%3B_Hasse%3B_circles.svg\" width=\"300\">\n</a><br/>\n<a href=\"https://commons.wikimedia.org/wiki/User:Watchduck\">\nUser:Watchduck\n</a>\n/\n<a href=\"https://creativecommons.org/licenses/by/3.0/deed.en\">CC BY 3.0</a>\n</p>\n\nSet partition algorithms for JavaScript.\nSee [docs](https://computational-combinatorics.github.io/set-partition/index.html).\n\n> :building_construction: Caveat emptor! This is work in progress. Code may be\n> working. Documentation may be present. Coherence may be. Maybe.\n\n> :warning: The code requires `regeneratorRuntime` to be defined, for instance by importing\n> [regenerator-runtime/runtime](https://www.npmjs.com/package/regenerator-runtime).\n\n```js\nimport {\n\tenumerate,\n\tcount,\n\t_count,\n\tsequence,\n\t_sequence,\n\tisPartition\n} from '@combinatorics/set-partition';\n\nimport {range} from '@iterable-iterator/range';\nimport {map} from '@iterable-iterator/map';\n\nenumerate(range(0)); // []\nenumerate(range(1)); // [[0]]\nenumerate(range(2)); // [[0], [1]] [[0, 1]]\n\ncount(0); // 1n\ncount(1); // 1n\ncount(2); // 2n\ncount(3); // 5n\ncount(4); // 15n\ncount(5); // 52n\ncount(6); // 203n\ncount(26); // 49631246523618756274n\n\n_count(1,6); // 203\n_count(1,26); // ???\n\nsequence(); // 1n 1n 2n 3n 5n 15n 52n 203n ...\n_sequence(1); // 1 1 2 3 5 15 52 203 ...\n\nisPartition(range(5), [range(5)]); // true\nisPartition(range(5), map(x => [x], range(5))); // true\nisPartition(range(5), map(x => (function* () {yield x;})(), range(5))); // true\nisPartition(range(5), [[0], [1], [2], [3], [4]]); // true\nisPartition(range(5), [[0, 1], [2], [3], [4]]); // true\nisPartition(range(5), [[2, 1], [3], [0, 4]]); // true\n\nisPartition(range(5), [[], [0], [1], [2], [3], [4]]); // false\nisPartition(range(5), [[0], [0], [1], [2], [3], [4]]); // false\nisPartition(range(5), [[5], [0], [1], [2], [3], [4]]); // false\n```\n\n[![License](https://img.shields.io/github/license/computational-combinatorics/set-partition.svg)](https://raw.githubusercontent.com/computational-combinatorics/set-partition/main/LICENSE)\n[![Version](https://img.shields.io/npm/v/@combinatorics/set-partition.svg)](https://www.npmjs.org/package/@combinatorics/set-partition)\n[![Tests](https://img.shields.io/github/workflow/status/computational-combinatorics/set-partition/ci:test?event=push&label=tests)](https://github.com/computational-combinatorics/set-partition/actions/workflows/ci:test.yml?query=branch:main)\n[![Dependencies](https://img.shields.io/david/computational-combinatorics/set-partition.svg)](https://david-dm.org/computational-combinatorics/set-partition)\n[![Dev dependencies](https://img.shields.io/david/dev/computational-combinatorics/set-partition.svg)](https://david-dm.org/computational-combinatorics/set-partition?type=dev)\n[![GitHub issues](https://img.shields.io/github/issues/computational-combinatorics/set-partition.svg)](https://github.com/computational-combinatorics/set-partition/issues)\n[![Downloads](https://img.shields.io/npm/dm/@combinatorics/set-partition.svg)](https://www.npmjs.org/package/@combinatorics/set-partition)\n\n[![Code issues](https://img.shields.io/codeclimate/issues/computational-combinatorics/set-partition.svg)](https://codeclimate.com/github/computational-combinatorics/set-partition/issues)\n[![Code maintainability](https://img.shields.io/codeclimate/maintainability/computational-combinatorics/set-partition.svg)](https://codeclimate.com/github/computational-combinatorics/set-partition/trends/churn)\n[![Code coverage (cov)](https://img.shields.io/codecov/c/gh/computational-combinatorics/set-partition/main.svg)](https://codecov.io/gh/computational-combinatorics/set-partition)\n[![Code technical debt](https://img.shields.io/codeclimate/tech-debt/computational-combinatorics/set-partition.svg)](https://codeclimate.com/github/computational-combinatorics/set-partition/trends/technical_debt)\n[![Documentation](https://computational-combinatorics.github.io/set-partition/badge.svg)](https://computational-combinatorics.github.io/set-partition/source.html)\n[![Package size](https://img.shields.io/bundlephobia/minzip/@combinatorics/set-partition)](https://bundlephobia.com/result?p=@combinatorics/set-partition)\n",
+    "longname": "/home/runner/work/set-partition/set-partition/README.md",
     "name": "./README.md",
     "static": true,
     "access": "public"
   },
   {
     "kind": "packageJSON",
-    "content": "{\n  \"name\": \"@aureooms/js-set-partition\",\n  \"description\": \"Set partition algorithms for JavaScript\",\n  \"version\": \"0.0.1\",\n  \"author\": \"aureooms\",\n  \"ava\": {\n    \"files\": [\n      \"test/src/**/*\"\n    ],\n    \"require\": [\n      \"regenerator-runtime/runtime\",\n      \"@babel/register\"\n    ],\n    \"timeout\": \"1m\"\n  },\n  \"babel\": {\n    \"presets\": [\n      \"@babel/preset-env\"\n    ],\n    \"env\": {\n      \"test\": {\n        \"presets\": [\n          \"babel-preset-power-assert\"\n        ],\n        \"plugins\": [\n          [\n            \"transform-remove-console\",\n            {\n              \"exclude\": [\n                \"log\",\n                \"error\",\n                \"warn\"\n              ]\n            }\n          ]\n        ],\n        \"sourceMaps\": \"inline\"\n      },\n      \"development\": {\n        \"presets\": [\n          \"babel-preset-power-assert\"\n        ],\n        \"plugins\": [\n          [\n            \"transform-remove-console\",\n            {\n              \"exclude\": [\n                \"log\",\n                \"error\",\n                \"warn\"\n              ]\n            }\n          ]\n        ],\n        \"sourceMaps\": \"inline\"\n      },\n      \"production\": {\n        \"plugins\": [\n          \"babel-plugin-unassert\",\n          [\n            \"transform-remove-console\",\n            {\n              \"exclude\": [\n                \"log\",\n                \"error\",\n                \"warn\"\n              ]\n            }\n          ]\n        ],\n        \"sourceMaps\": \"inline\"\n      }\n    }\n  },\n  \"bugs\": {\n    \"url\": \"https://github.com/aureooms/js-set-partition/issues\"\n  },\n  \"dependencies\": {\n    \"@aureooms/js-itertools\": \"^4.1.0\"\n  },\n  \"devDependencies\": {\n    \"@aureooms/js-red-black-tree\": \"^2.0.7\",\n    \"@babel/cli\": \"7.11.6\",\n    \"@babel/core\": \"7.11.6\",\n    \"@babel/preset-env\": \"7.11.5\",\n    \"@babel/register\": \"7.11.5\",\n    \"ava\": \"3.12.1\",\n    \"babel-plugin-transform-remove-console\": \"6.9.4\",\n    \"babel-plugin-unassert\": \"3.0.1\",\n    \"babel-preset-power-assert\": \"3.0.0\",\n    \"coveralls\": \"3.1.0\",\n    \"esdoc\": \"1.1.0\",\n    \"esdoc-ecmascript-proposal-plugin\": \"1.0.0\",\n    \"esdoc-inject-script-plugin\": \"1.0.0\",\n    \"esdoc-inject-style-plugin\": \"1.0.0\",\n    \"esdoc-standard-plugin\": \"1.0.0\",\n    \"np\": \"6.5.0\",\n    \"nyc\": \"15.1.0\",\n    \"power-assert\": \"1.6.1\",\n    \"regenerator-runtime\": \"0.13.7\",\n    \"total-order\": \"^0.0.3\",\n    \"xo\": \"0.33.1\"\n  },\n  \"files\": [\n    \"lib\"\n  ],\n  \"homepage\": \"https://aureooms.github.io/js-set-partition\",\n  \"keywords\": [\n    \"choose\",\n    \"partition\",\n    \"set\"\n  ],\n  \"license\": \"AGPL-3.0\",\n  \"main\": \"lib/index.js\",\n  \"prettier\": {\n    \"trailingComma\": \"all\"\n  },\n  \"repository\": {\n    \"type\": \"git\",\n    \"url\": \"https://github.com/aureooms/js-set-partition\"\n  },\n  \"scripts\": {\n    \"build\": \"babel --delete-dir-on-start --env-name production src -d lib\",\n    \"cover\": \"nyc --reporter=lcov npm test\",\n    \"dev\": \"npm run lint -- --fix && npm run cover -- -- -st --fail-fast\",\n    \"esdoc\": \"esdoc\",\n    \"lint\": \"xo\",\n    \"prepare\": \"npm run build\",\n    \"release\": \"np\",\n    \"test\": \"ava\",\n    \"travis\": \"npm run lint && npm run cover\"\n  },\n  \"sideEffects\": false,\n  \"xo\": {\n    \"prettier\": true,\n    \"ignores\": [\n      \"lib\"\n    ],\n    \"plugins\": [\n      \"unicorn\"\n    ],\n    \"rules\": {\n      \"unicorn/filename-case\": [\n        \"error\",\n        {\n          \"case\": \"camelCase\"\n        }\n      ]\n    },\n    \"overrides\": [\n      {\n        \"files\": [\n          \"doc/**\"\n        ],\n        \"env\": \"browser\"\n      }\n    ]\n  }\n}\n",
-    "longname": "/home/aureooms/dev/js/packages/algorithms/js-set-partition/package.json",
+    "content": "{\n  \"name\": \"@combinatorics/set-partition\",\n  \"description\": \"Set partition algorithms for JavaScript\",\n  \"version\": \"1.0.0\",\n  \"license\": \"AGPL-3.0\",\n  \"author\": \"make-github-pseudonymous-again\",\n  \"homepage\": \"https://computational-combinatorics.github.io/set-partition\",\n  \"repository\": {\n    \"type\": \"git\",\n    \"url\": \"https://github.com/computational-combinatorics/set-partition\"\n  },\n  \"bugs\": {\n    \"url\": \"https://github.com/computational-combinatorics/set-partition/issues\"\n  },\n  \"keywords\": [\n    \"choose\",\n    \"partition\",\n    \"set\"\n  ],\n  \"sideEffects\": false,\n  \"source\": \"src/index.js\",\n  \"main\": \"dist/index.js\",\n  \"module\": \"dist/index.module.js\",\n  \"esmodule\": \"dist/index.modern.js\",\n  \"umd:main\": \"dist/index.umd.js\",\n  \"unpkg\": \"dist/index.umd.js\",\n  \"exports\": {\n    \".\": {\n      \"browser\": \"./dist/index.module.js\",\n      \"umd\": \"./dist/index.umd.js\",\n      \"require\": \"./dist/index.js\",\n      \"default\": \"./dist/index.modern.js\"\n    }\n  },\n  \"files\": [\n    \"dist\"\n  ],\n  \"scripts\": {\n    \"build\": \"NODE_ENV=production microbundle\",\n    \"build-docs\": \"esdoc\",\n    \"build-gh-pages\": \"npm run build-docs\",\n    \"ci:test\": \"npm run lint-config && npm run lint && npm run cover\",\n    \"commit-msg\": \"commitlint --edit\",\n    \"cover\": \"NODE_ENV=cover c8 --all --src src --reporter lcov --reporter text-summary --reporter text npm test\",\n    \"debug\": \"NODE_ENV=debug npm run test -- -st --fail-fast\",\n    \"dev\": \"npm run lint-and-fix && npm run cover -- -- -st --fail-fast\",\n    \"install-hooks\": \"husky install\",\n    \"lint\": \"xo\",\n    \"lint-and-fix\": \"npm run lint -- --fix\",\n    \"lint-config\": \"fixpack --dryRun\",\n    \"lint-config-and-fix\": \"fixpack || fixpack\",\n    \"postinstall\": \"npm run install-hooks\",\n    \"postpublish\": \"pinst --enable\",\n    \"precommit\": \"lint-staged\",\n    \"prepare\": \"npm run build\",\n    \"prepublishOnly\": \"pinst --disable\",\n    \"release\": \"np --message ':hatching_chick: release: Bumping to v%s.'\",\n    \"test\": \"ava\"\n  },\n  \"dependencies\": {\n    \"@iterable-iterator/list\": \"^0.0.2\",\n    \"@iterable-iterator/map\": \"^0.1.0\",\n    \"@iterable-iterator/select\": \"^0.0.1\"\n  },\n  \"devDependencies\": {\n    \"@aureooms/js-red-black-tree\": \"9.0.0\",\n    \"@babel/core\": \"7.14.3\",\n    \"@babel/preset-env\": \"7.14.2\",\n    \"@babel/register\": \"7.13.16\",\n    \"@commitlint/cli\": \"12.1.4\",\n    \"@iterable-iterator/iter\": \"^0.0.2\",\n    \"@iterable-iterator/range\": \"^1.0.0\",\n    \"@iterable-iterator/slice\": \"^0.0.1\",\n    \"@js-library/commitlint-config\": \"0.0.4\",\n    \"ava\": \"3.15.0\",\n    \"babel-plugin-transform-remove-console\": \"6.9.4\",\n    \"babel-plugin-unassert\": \"3.1.0\",\n    \"babel-preset-power-assert\": \"3.0.0\",\n    \"c8\": \"7.7.2\",\n    \"coveralls\": \"3.1.0\",\n    \"esdoc\": \"1.1.0\",\n    \"esdoc-ecmascript-proposal-plugin\": \"1.0.0\",\n    \"esdoc-inject-script-plugin\": \"1.0.0\",\n    \"esdoc-inject-style-plugin\": \"1.0.0\",\n    \"esdoc-standard-plugin\": \"1.0.0\",\n    \"fixpack\": \"4.0.0\",\n    \"husky\": \"6.0.0\",\n    \"lint-staged\": \"11.0.0\",\n    \"microbundle\": \"0.13.0\",\n    \"np\": \"7.5.0\",\n    \"pinst\": \"2.1.6\",\n    \"power-assert\": \"1.6.1\",\n    \"regenerator-runtime\": \"0.13.7\",\n    \"total-order\": \"3.0.1\",\n    \"xo\": \"0.40.1\"\n  },\n  \"ava\": {\n    \"files\": [\n      \"test/src/**/*\"\n    ],\n    \"require\": [\n      \"regenerator-runtime/runtime\",\n      \"@babel/register\"\n    ],\n    \"timeout\": \"1m\"\n  },\n  \"babel\": {\n    \"sourceMaps\": true,\n    \"presets\": [\n      [\n        \"@babel/preset-env\",\n        {\n          \"targets\": \"current node\"\n        }\n      ]\n    ],\n    \"plugins\": [\n      [\n        \"transform-remove-console\",\n        {\n          \"exclude\": [\n            \"log\",\n            \"error\",\n            \"warn\"\n          ]\n        }\n      ]\n    ],\n    \"env\": {\n      \"debug\": {\n        \"presets\": [\n          \"babel-preset-power-assert\"\n        ],\n        \"plugins\": [\n          [\n            \"transform-remove-console\",\n            {\n              \"exclude\": [\n                \"debug\",\n                \"log\",\n                \"error\",\n                \"warn\"\n              ]\n            }\n          ]\n        ]\n      },\n      \"test\": {\n        \"presets\": [\n          \"babel-preset-power-assert\"\n        ]\n      },\n      \"cover\": {\n        \"sourceMaps\": \"both\",\n        \"presets\": [\n          \"babel-preset-power-assert\"\n        ]\n      },\n      \"development\": {\n        \"presets\": [\n          [\n            \"@babel/preset-env\",\n            {\n              \"targets\": [\n                \"defaults\",\n                \"maintained node versions\"\n              ]\n            }\n          ],\n          \"babel-preset-power-assert\"\n        ]\n      },\n      \"production\": {\n        \"presets\": [\n          [\n            \"@babel/preset-env\",\n            {\n              \"targets\": [\n                \"defaults\",\n                \"maintained node versions\"\n              ]\n            }\n          ]\n        ],\n        \"plugins\": [\n          \"babel-plugin-unassert\"\n        ]\n      }\n    }\n  },\n  \"lint-staged\": {\n    \"*.js\": [\n      \"npm run lint-and-fix\"\n    ],\n    \"package.json\": [\n      \"npm run lint-config-and-fix\"\n    ]\n  },\n  \"prettier\": {\n    \"trailingComma\": \"all\"\n  },\n  \"xo\": {\n    \"prettier\": true,\n    \"plugins\": [\n      \"unicorn\"\n    ],\n    \"rules\": {\n      \"unicorn/filename-case\": [\n        \"error\",\n        {\n          \"case\": \"camelCase\"\n        }\n      ]\n    },\n    \"overrides\": [\n      {\n        \"files\": [\n          \"doc/**\"\n        ],\n        \"env\": \"browser\"\n      }\n    ]\n  }\n}\n",
+    "longname": "/home/runner/work/set-partition/set-partition/package.json",
     "name": "package.json",
     "static": true,
     "access": "public"
@@ -812,7 +808,7 @@
   },
   {
     "kind": "manual",
-    "longname": "/home/aureooms/dev/js/packages/algorithms/js-set-partition/doc/manual/overview.md",
+    "longname": "/home/runner/work/set-partition/set-partition/doc/manual/overview.md",
     "name": "./doc/manual/overview.md",
     "content": "# Overview\n",
     "static": true,
@@ -820,25 +816,25 @@
   },
   {
     "kind": "manual",
-    "longname": "/home/aureooms/dev/js/packages/algorithms/js-set-partition/doc/manual/installation.md",
+    "longname": "/home/runner/work/set-partition/set-partition/doc/manual/installation.md",
     "name": "./doc/manual/installation.md",
-    "content": "# Installation\n\nCan be managed using\n[yarn](https://yarnpkg.com/en/docs),\n[npm](https://docs.npmjs.com),\nor [jspm](https://jspm.org/docs).\n\n\n### yarn\n```terminal\nyarn add @aureooms/js-set-partition\n```\n\n### npm\n```terminal\nnpm install @aureooms/js-set-partition --save\n```\n\n### jspm\n```terminal\njspm install npm:@aureooms/js-set-partition\n```\n",
+    "content": "# Installation\n\nCan be managed using\n[yarn](https://yarnpkg.com/en/docs),\n[npm](https://docs.npmjs.com),\nor [jspm](https://jspm.org/docs).\n\n\n### yarn\n```terminal\nyarn add @combinatorics/set-partition\n```\n\n### npm\n```terminal\nnpm install @combinatorics/set-partition --save\n```\n\n### jspm\n```terminal\njspm install npm:@combinatorics/set-partition\n```\n",
     "static": true,
     "access": "public"
   },
   {
     "kind": "manual",
-    "longname": "/home/aureooms/dev/js/packages/algorithms/js-set-partition/doc/manual/usage.md",
+    "longname": "/home/runner/work/set-partition/set-partition/doc/manual/usage.md",
     "name": "./doc/manual/usage.md",
-    "content": "# Usage\n\n> :warning: The code requires `regeneratorRuntime` to be defined, for instance by importing\n> [regenerator-runtime/runtime](https://www.npmjs.com/package/regenerator-runtime).\n\nFirst, require the polyfill at the entry point of your application\n```js\nrequire( 'regenerator-runtime/runtime' );\n// or\nimport 'regenerator-runtime/runtime.js' ;\n```\n\nThen, import the library where needed\n```js\nconst setpartition = require( '@aureooms/js-set-partition' ) ;\n// or\nimport * as setpartition from '@aureooms/js-set-partition' ;\n```\n",
+    "content": "# Usage\n\n> :warning: The code requires `regeneratorRuntime` to be defined, for instance by importing\n> [regenerator-runtime/runtime](https://www.npmjs.com/package/regenerator-runtime).\n\nFirst, require the polyfill at the entry point of your application\n```js\nrequire( 'regenerator-runtime/runtime' );\n// or\nimport 'regenerator-runtime/runtime.js' ;\n```\n\nThen, import the library where needed\n```js\nconst setpartition = require( '@combinatorics/set-partition' ) ;\n// or\nimport * as setpartition from '@combinatorics/set-partition' ;\n```\n",
     "static": true,
     "access": "public"
   },
   {
     "kind": "manual",
-    "longname": "/home/aureooms/dev/js/packages/algorithms/js-set-partition/doc/manual/example.md",
+    "longname": "/home/runner/work/set-partition/set-partition/doc/manual/example.md",
     "name": "./doc/manual/example.md",
-    "content": "# Examples\n\n> More examples in [the test files](https://github.com/aureooms/js-set-partition/tree/main/test/src).\n",
+    "content": "# Examples\n\n> More examples in [the test files](https://github.com/computational-combinatorics/set-partition/tree/main/test/src).\n",
     "static": true,
     "access": "public"
   }

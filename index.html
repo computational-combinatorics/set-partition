@@ -3,12 +3,12 @@
 <head>
   <meta charset="utf-8">
   <base data-ice="baseUrl">
-  <title data-ice="title">Home | @aureooms/js-set-partition</title>
+  <title data-ice="title">Home | @combinatorics/set-partition</title>
   <link type="text/css" rel="stylesheet" href="css/style.css">
   <link type="text/css" rel="stylesheet" href="css/prettify-tomorrow.css">
   <script src="script/prettify/prettify.js"></script>
   <script src="script/manual.js"></script>
-<link rel="stylesheet" href="./inject/css/0-style.css"><script src="./inject/script/0-header.js"></script><meta name="description" content="Set partition algorithms for JavaScript"><meta property="twitter:card" content="summary"><meta property="twitter:title" content="@aureooms/js-set-partition"><meta property="twitter:description" content="Set partition algorithms for JavaScript"></head>
+<link rel="stylesheet" href="./inject/css/0-style.css"><script src="./inject/script/0-header.js"></script><meta name="description" content="Set partition algorithms for JavaScript"><meta property="twitter:card" content="summary"><meta property="twitter:title" content="@combinatorics/set-partition"><meta property="twitter:description" content="Set partition algorithms for JavaScript"></head>
 <body class="layout-container" data-ice="rootContainer">
 
 <header>
@@ -24,7 +24,7 @@
   </span>
     <ul class="search-result"></ul>
   </div>
-<a style="position:relative; top:3px;" href="https://github.com/aureooms/js-set-partition"><img width="20px" src="./image/github.png"></a></header>
+<a style="position:relative; top:3px;" href="https://github.com/computational-combinatorics/set-partition"><img width="20px" src="./image/github.png"></a></header>
 
 <nav class="navigation" data-ice="nav"><div>
   <ul>
@@ -38,7 +38,7 @@
 </div>
 </nav>
 
-<div class="content" data-ice="content"><div data-ice="index" class="github-markdown"><h1 id="-bento---a-href--https---aureooms-github-io-js-set-partition---aureooms-js-set-partition--a-">:bento: <a href="https://aureooms.github.io/js-set-partition">@aureooms/js-set-partition</a></h1><p></p><p>
+<div class="content" data-ice="content"><div data-ice="index" class="github-markdown"><h1 id="-bento---a-href--https---computational-combinatorics-github-io-set-partition---combinatorics-set-partition--a-">:bento: <a href="https://computational-combinatorics.github.io/set-partition">@combinatorics/set-partition</a></h1><p></p><p>
 <a href="https://en.wikipedia.org/wiki/File:Set_partitions_4;_Hasse;_circles.svg">
 <img src="https://upload.wikimedia.org/wikipedia/commons/3/32/Set_partitions_4%3B_Hasse%3B_circles.svg" width="300">
 </a><br>
@@ -51,7 +51,7 @@ User:Watchduck
 
 <p></p>
 <p>Set partition algorithms for JavaScript.
-See <a href="https://aureooms.github.io/js-set-partition/index.html">docs</a>.</p>
+See <a href="https://computational-combinatorics.github.io/set-partition/index.html">docs</a>.</p>
 <blockquote>
 <p>:building_construction: Caveat emptor! This is work in progress. Code may be
 working. Documentation may be present. Coherence may be. Maybe.</p>
@@ -67,9 +67,10 @@ working. Documentation may be present. Coherence may be. Maybe.</p>
     sequence,
     _sequence,
     isPartition
-} from &apos;@aureooms/js-set-partition&apos;;
+} from &apos;@combinatorics/set-partition&apos;;
 
-import {range, map} from &apos;@aureooms/js-itertools&apos;;
+import {range} from &apos;@iterable-iterator/range&apos;;
+import {map} from &apos;@iterable-iterator/map&apos;;
 
 enumerate(range(0)); // []
 enumerate(range(1)); // [[0]]
@@ -101,19 +102,19 @@ isPartition(range(5), [[], [0], [1], [2], [3], [4]]); // false
 isPartition(range(5), [[0], [0], [1], [2], [3], [4]]); // false
 isPartition(range(5), [[5], [0], [1], [2], [3], [4]]); // false</code>
 </code></pre>
-<p><a href="https://raw.githubusercontent.com/aureooms/js-set-partition/main/LICENSE"><img src="https://img.shields.io/github/license/aureooms/js-set-partition.svg" alt="License"></a>
-<a href="https://www.npmjs.org/package/@aureooms/js-set-partition"><img src="https://img.shields.io/npm/v/@aureooms/js-set-partition.svg" alt="Version"></a>
-<a href="https://travis-ci.org/aureooms/js-set-partition/branches"><img src="https://img.shields.io/travis/aureooms/js-set-partition/main.svg" alt="Build"></a>
-<a href="https://david-dm.org/aureooms/js-set-partition"><img src="https://img.shields.io/david/aureooms/js-set-partition.svg" alt="Dependencies"></a>
-<a href="https://david-dm.org/aureooms/js-set-partition?type=dev"><img src="https://img.shields.io/david/dev/aureooms/js-set-partition.svg" alt="Dev dependencies"></a>
-<a href="https://github.com/aureooms/js-set-partition/issues"><img src="https://img.shields.io/github/issues/aureooms/js-set-partition.svg" alt="GitHub issues"></a>
-<a href="https://www.npmjs.org/package/@aureooms/js-set-partition"><img src="https://img.shields.io/npm/dm/@aureooms/js-set-partition.svg" alt="Downloads"></a></p>
-<p><a href="https://codeclimate.com/github/aureooms/js-set-partition/issues"><img src="https://img.shields.io/codeclimate/issues/aureooms/js-set-partition.svg" alt="Code issues"></a>
-<a href="https://codeclimate.com/github/aureooms/js-set-partition/trends/churn"><img src="https://img.shields.io/codeclimate/maintainability/aureooms/js-set-partition.svg" alt="Code maintainability"></a>
-<a href="https://codecov.io/gh/aureooms/js-set-partition"><img src="https://img.shields.io/codecov/c/gh/aureooms/js-set-partition/main.svg" alt="Code coverage (cov)"></a>
-<a href="https://codeclimate.com/github/aureooms/js-set-partition/trends/technical_debt"><img src="https://img.shields.io/codeclimate/tech-debt/aureooms/js-set-partition.svg" alt="Code technical debt"></a>
-<a href="https://aureooms.github.io/js-set-partition/source.html"><img src="https://aureooms.github.io/js-set-partition/badge.svg" alt="Documentation"></a>
-<a href="https://bundlephobia.com/result?p=@aureooms/js-set-partition"><img src="https://img.shields.io/bundlephobia/minzip/@aureooms/js-set-partition" alt="Package size"></a></p>
+<p><a href="https://raw.githubusercontent.com/computational-combinatorics/set-partition/main/LICENSE"><img src="https://img.shields.io/github/license/computational-combinatorics/set-partition.svg" alt="License"></a>
+<a href="https://www.npmjs.org/package/@combinatorics/set-partition"><img src="https://img.shields.io/npm/v/@combinatorics/set-partition.svg" alt="Version"></a>
+<a href="https://github.com/computational-combinatorics/set-partition/actions/workflows/ci:test.yml?query=branch:main"><img src="https://img.shields.io/github/workflow/status/computational-combinatorics/set-partition/ci:test?event=push&amp;label=tests" alt="Tests"></a>
+<a href="https://david-dm.org/computational-combinatorics/set-partition"><img src="https://img.shields.io/david/computational-combinatorics/set-partition.svg" alt="Dependencies"></a>
+<a href="https://david-dm.org/computational-combinatorics/set-partition?type=dev"><img src="https://img.shields.io/david/dev/computational-combinatorics/set-partition.svg" alt="Dev dependencies"></a>
+<a href="https://github.com/computational-combinatorics/set-partition/issues"><img src="https://img.shields.io/github/issues/computational-combinatorics/set-partition.svg" alt="GitHub issues"></a>
+<a href="https://www.npmjs.org/package/@combinatorics/set-partition"><img src="https://img.shields.io/npm/dm/@combinatorics/set-partition.svg" alt="Downloads"></a></p>
+<p><a href="https://codeclimate.com/github/computational-combinatorics/set-partition/issues"><img src="https://img.shields.io/codeclimate/issues/computational-combinatorics/set-partition.svg" alt="Code issues"></a>
+<a href="https://codeclimate.com/github/computational-combinatorics/set-partition/trends/churn"><img src="https://img.shields.io/codeclimate/maintainability/computational-combinatorics/set-partition.svg" alt="Code maintainability"></a>
+<a href="https://codecov.io/gh/computational-combinatorics/set-partition"><img src="https://img.shields.io/codecov/c/gh/computational-combinatorics/set-partition/main.svg" alt="Code coverage (cov)"></a>
+<a href="https://codeclimate.com/github/computational-combinatorics/set-partition/trends/technical_debt"><img src="https://img.shields.io/codeclimate/tech-debt/computational-combinatorics/set-partition.svg" alt="Code technical debt"></a>
+<a href="https://computational-combinatorics.github.io/set-partition/source.html"><img src="https://computational-combinatorics.github.io/set-partition/badge.svg" alt="Documentation"></a>
+<a href="https://bundlephobia.com/result?p=@combinatorics/set-partition"><img src="https://img.shields.io/bundlephobia/minzip/@combinatorics/set-partition" alt="Package size"></a></p>
 </div>
 </div>
 
