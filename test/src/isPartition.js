@@ -1,6 +1,9 @@
 import test from 'ava';
 
-import {iter, range, list, map} from '@aureooms/js-itertools';
+import {iter} from '@iterable-iterator/iter';
+import {list} from '@iterable-iterator/list';
+import {range} from '@iterable-iterator/range';
+import {map} from '@iterable-iterator/map';
 
 import {isPartition} from '../../src';
 

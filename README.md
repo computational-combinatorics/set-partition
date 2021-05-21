@@ -31,7 +31,8 @@ import {
 	isPartition
 } from '@combinatorics/set-partition';
 
-import {range, map} from '@aureooms/js-itertools';
+import {range} from '@iterable-iterator/range';
+import {map} from '@iterable-iterator/map';
 
 enumerate(range(0)); // []
 enumerate(range(1)); // [[0]]

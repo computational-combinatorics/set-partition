@@ -1,7 +1,6 @@
-import {list} from '@aureooms/js-itertools';
+import {list} from '@iterable-iterator/list';
 
 import _enumerate from './_enumerate';
 
-export default function enumerate(elements) {
-	return _enumerate(list(elements));
-}
+const enumerate = (elements) => _enumerate(list(elements));
+export default enumerate;

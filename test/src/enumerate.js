@@ -1,6 +1,8 @@
 import test from 'ava';
 
-import {range, list, map} from '@aureooms/js-itertools';
+import {list} from '@iterable-iterator/list';
+import {range} from '@iterable-iterator/range';
+import {map} from '@iterable-iterator/map';
 import {enumerate} from '../../src';
 
 const macro = (t, n, expected) => {

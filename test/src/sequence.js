@@ -1,6 +1,7 @@
 import test from 'ava';
 
-import {list, take} from '@aureooms/js-itertools';
+import {list} from '@iterable-iterator/list';
+import {take} from '@iterable-iterator/slice';
 
 import {sequence, _sequence} from '../../src';
 

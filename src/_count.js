@@ -1,4 +1,4 @@
-import {nth} from '@aureooms/js-itertools';
+import {nth} from '@iterable-iterator/select';
 
 import _sequence from './_sequence';
 
