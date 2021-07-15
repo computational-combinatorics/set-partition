@@ -18,7 +18,7 @@ domReady(() => {
 
 	const testlink = document.querySelector('header > a[data-ice="testLink"]');
 	testlink.href =
-		'https://coveralls.io/github/computational-combinatorics/set-partition';
+		'https://app.codecov.io/gh/computational-combinatorics/set-partition';
 	testlink.target = '_BLANK';
 
 	const searchBox = document.querySelector('.search-box');
