@@ -19,7 +19,7 @@
   ],
   "sideEffects": false,
   "source": "src/index.js",
-  "main": "dist/index.js",
+  "main": "dist/index.cjs",
   "module": "dist/index.module.js",
   "esmodule": "dist/index.modern.js",
   "umd:main": "dist/index.umd.js",
@@ -28,7 +28,7 @@
     ".": {
       "browser": "./dist/index.module.js",
       "umd": "./dist/index.umd.js",
-      "require": "./dist/index.js",
+      "require": "./dist/index.cjs",
       "default": "./dist/index.modern.js"
     }
   },
