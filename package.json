@@ -1,7 +1,7 @@
 {
   "name": "@combinatorics/set-partition",
   "description": "Set partition algorithms for JavaScript",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "license": "AGPL-3.0",
   "author": "make-github-pseudonymous-again",
   "homepage": "https://computational-combinatorics.github.io/set-partition",
