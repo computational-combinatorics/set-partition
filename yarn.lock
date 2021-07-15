@@ -991,7 +991,7 @@
   resolved "https://registry.yarnpkg.com/@bcoe/v8-coverage/-/v8-coverage-0.2.3.tgz#75a2e8b51cb758a7553d6804a5932d7aace75c39"
   integrity sha512-0hYQ8SB4Db5zvZB4axdMHGwEaQjkZzFjQiN9LVYvIFB2nSUHW9tYpxWriPrWDASIxiaXax83REcLxuSdnGPZtw==
 
-"@binary-search-tree/red-black-tree@^10.0.1":
+"@binary-search-tree/red-black-tree@10.0.1":
   version "10.0.1"
   resolved "https://registry.yarnpkg.com/@binary-search-tree/red-black-tree/-/red-black-tree-10.0.1.tgz#6024244b12f862184611de096fa11d492a51372c"
   integrity sha512-NuqpV+souC/x4ZK6TjMJDnYPg3P7Hqnk5ZtCQn5ZJc3IrxS+rhvvown5atD6iB3546JCIsDo1NmG/hw5cvbIRQ==
