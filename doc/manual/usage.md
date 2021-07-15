@@ -5,14 +5,14 @@
 
 First, require the polyfill at the entry point of your application
 ```js
-require( 'regenerator-runtime/runtime' );
+await import( 'regenerator-runtime/runtime.js' );
 // or
 import 'regenerator-runtime/runtime.js' ;
 ```
 
 Then, import the library where needed
 ```js
-const setpartition = require( '@combinatorics/set-partition' ) ;
+const setpartition = await import( '@combinatorics/set-partition' ) ;
 // or
 import * as setpartition from '@combinatorics/set-partition' ;
 ```
