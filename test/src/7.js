@@ -1,7 +1,7 @@
 import test from 'ava';
 
 import totalOrder from 'total-order';
-import {RedBlackTree} from '@aureooms/js-red-black-tree';
+import {RedBlackTree} from '@binary-search-tree/red-black-tree';
 
 import {enumerate, _count, isPartition} from '../../src/index.js';
 

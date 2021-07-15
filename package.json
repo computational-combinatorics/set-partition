@@ -60,15 +60,15 @@
     "test": "ava"
   },
   "dependencies": {
-    "@iterable-iterator/list": "^1.0.0",
-    "@iterable-iterator/map": "^1.0.0",
-    "@iterable-iterator/select": "^0.0.1"
+    "@iterable-iterator/list": "^1.0.1",
+    "@iterable-iterator/map": "^1.0.1",
+    "@iterable-iterator/select": "^1.0.0"
   },
   "devDependencies": {
-    "@aureooms/js-red-black-tree": "9.0.0",
     "@babel/core": "7.14.6",
     "@babel/preset-env": "7.14.7",
     "@babel/register": "7.14.5",
+    "@binary-search-tree/red-black-tree": "^10.0.1",
     "@commitlint/cli": "12.1.4",
     "@iterable-iterator/iter": "1.0.1",
     "@iterable-iterator/range": "2.0.1",
@@ -92,7 +92,7 @@
     "pinst": "2.1.6",
     "power-assert": "1.6.1",
     "regenerator-runtime": "0.13.7",
-    "total-order": "3.0.1",
+    "total-order": "4.0.0",
     "xo": "0.41.0"
   },
   "ava": {
