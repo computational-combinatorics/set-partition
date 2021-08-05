@@ -1281,6 +1281,15 @@
   resolved "https://registry.yarnpkg.com/@binary-search-tree/red-black-tree/-/red-black-tree-10.0.1.tgz#6024244b12f862184611de096fa11d492a51372c"
   integrity sha512-NuqpV+souC/x4ZK6TjMJDnYPg3P7Hqnk5ZtCQn5ZJc3IrxS+rhvvown5atD6iB3546JCIsDo1NmG/hw5cvbIRQ==
 
+"@collection-abstraction/pairs@^5.0.0":
+  version "5.0.0"
+  resolved "https://registry.yarnpkg.com/@collection-abstraction/pairs/-/pairs-5.0.0.tgz#ae75cddb3c44355afb5bfba84dc822938bd7e59b"
+  integrity sha512-ep2ufIbjgiPds82rVRwj/iQxD4VlVGiH3V+uiBZFueM4eDjIfb+8jsIa2XTGavQzLNY6lhWdB/Lb2XIcO2vxgw==
+  dependencies:
+    "@failure-abstraction/error" "^6.0.0"
+    "@iterable-iterator/filter" "^1.0.0"
+    "@iterable-iterator/map" "^1.0.0"
+
 "@commitlint/cli@13.1.0":
   version "13.1.0"
   resolved "https://registry.yarnpkg.com/@commitlint/cli/-/cli-13.1.0.tgz#3608bb24dbef41aaa0729ffe65c7f9b57409626a"
@@ -1425,15 +1434,6 @@
   integrity sha512-/LSOEPmWGZ10OiKfje06GNDM/fzbY1ZfXyvZKr+/a79ZTlGoTwsQW1uPvtmQDtBzs2h2VbPjHho4zNSP5YH0Zg==
   dependencies:
     "@failure-abstraction/error" "^6.0.1"
-
-"@data-structure/pairs@^4.0.0":
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/@data-structure/pairs/-/pairs-4.0.0.tgz#b82b63b962413a968fdb8ea3c13a2d5977c30921"
-  integrity sha512-5mlndXMPo7G+7fxrpG1iEURZNi/uW5R8vefGMubb1d7U/NkzwnkDh7foKXto5LT8OPrn8pTA/fGIKR1GKlUlOg==
-  dependencies:
-    "@failure-abstraction/error" "^6.0.0"
-    "@iterable-iterator/filter" "^1.0.0"
-    "@iterable-iterator/map" "^1.0.0"
 
 "@eslint/eslintrc@^0.4.3":
   version "0.4.3"
@@ -8802,12 +8802,12 @@ to-regex-range@^5.0.1:
   dependencies:
     is-number "^7.0.0"
 
-total-order@4.0.0:
-  version "4.0.0"
-  resolved "https://registry.yarnpkg.com/total-order/-/total-order-4.0.0.tgz#77949d29b2dbcddad10ae90bc841e6750ad87cfc"
-  integrity sha512-NWL2/Bbb2VStHtUXKhFydYY9CaiBfouJjnlSE4gRnqnOCWBvgAFqbThMfVetohl0DVhWcBBwGe2pSNshwk4SLg==
+total-order@4.0.1:
+  version "4.0.1"
+  resolved "https://registry.yarnpkg.com/total-order/-/total-order-4.0.1.tgz#07c9a212b61cfc682146393e6c18c07f6472faea"
+  integrity sha512-5dVtdQMZTPNpJvSdObzbC4eK876YOJJyn9QEwJmaUQKywBG3T6yfNn7sxXGM8T8pVoMG8LfG7HCuOv3xvoZuTw==
   dependencies:
-    "@data-structure/pairs" "^4.0.0"
+    "@collection-abstraction/pairs" "^5.0.0"
     "@total-order/key" "^1.0.0"
     "@total-order/lex" "^1.0.0"
     "@total-order/primitive" "^1.0.1"
