@@ -2052,7 +2052,16 @@
     "@iterable-iterator/next" "^2.0.0"
     "@iterable-iterator/slice" "^1.0.0"
 
-"@iterable-iterator/slice@1.0.1", "@iterable-iterator/slice@^1.0.0":
+"@iterable-iterator/slice@1.0.2":
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/@iterable-iterator/slice/-/slice-1.0.2.tgz#c793dd32c0942281f5f85114c61de2a4b05c6396"
+  integrity sha512-r6Z/RPZz4q8GAmqSDlHjTlHpFMDYmBlNQYZ4Rqp7xjn1ihsFVw+7WYH5ivPk11UbE/Inz1ZuBc01/vqT1F9U/g==
+  dependencies:
+    "@data-structure/deque" "^9.0.1"
+    "@iterable-iterator/consume" "^1.0.1"
+    "@iterable-iterator/iter" "^1.0.1"
+
+"@iterable-iterator/slice@^1.0.0":
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/@iterable-iterator/slice/-/slice-1.0.1.tgz#b6344d4e91379f6eab360a87ff304d0b3cc75ccf"
   integrity sha512-vvlv9kBO5YIbB64WBjMtoa5s1tRe8OdKH5YGYJza7ctS5DgPWl+QRsoNbsxcecyxxut63RKQdXqp8DQM9P0v6A==
