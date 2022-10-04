@@ -93,7 +93,7 @@
     "power-assert": "1.6.1",
     "regenerator-runtime": "0.13.9",
     "total-order": "4.0.1",
-    "xo": "0.52.3"
+    "xo": "0.52.4"
   },
   "ava": {
     "files": [
