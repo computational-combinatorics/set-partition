@@ -65,9 +65,9 @@
     "@iterable-iterator/select": "^1.0.0"
   },
   "devDependencies": {
-    "@babel/core": "7.23.6",
-    "@babel/preset-env": "7.23.6",
-    "@babel/register": "7.22.15",
+    "@babel/core": "7.23.7",
+    "@babel/preset-env": "7.23.7",
+    "@babel/register": "7.23.7",
     "@binary-search-tree/red-black-tree": "10.0.1",
     "@commitlint/cli": "18.4.3",
     "@iterable-iterator/iter": "1.0.1",
