@@ -67,7 +67,7 @@ isPartition(range(5), [[5], [0], [1], [2], [3], [4]]); // false
 
 [![License](https://img.shields.io/github/license/computational-combinatorics/set-partition.svg)](https://raw.githubusercontent.com/computational-combinatorics/set-partition/main/LICENSE)
 [![Version](https://img.shields.io/npm/v/@combinatorics/set-partition.svg)](https://www.npmjs.org/package/@combinatorics/set-partition)
-[![Tests](https://img.shields.io/github/workflow/status/computational-combinatorics/set-partition/ci?event=push&label=tests)](https://github.com/computational-combinatorics/set-partition/actions/workflows/ci.yml?query=branch:main)
+[![Tests](https://img.shields.io/github/actions/workflow/status/computational-combinatorics/set-partition/ci.yml?branch=main&event=push&label=tests)](https://github.com/computational-combinatorics/set-partition/actions/workflows/ci.yml?query=branch:main)
 [![Dependencies](https://img.shields.io/librariesio/github/computational-combinatorics/set-partition.svg)](https://github.com/computational-combinatorics/set-partition/network/dependencies)
 [![GitHub issues](https://img.shields.io/github/issues/computational-combinatorics/set-partition.svg)](https://github.com/computational-combinatorics/set-partition/issues)
 [![Downloads](https://img.shields.io/npm/dm/@combinatorics/set-partition.svg)](https://www.npmjs.org/package/@combinatorics/set-partition)
