@@ -210,7 +210,8 @@
         {
           "case": "camelCase"
         }
-      ]
+      ],
+      "unicorn/prefer-node-protocol": "off"
     },
     "overrides": [
       {
