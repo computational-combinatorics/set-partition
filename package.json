@@ -218,7 +218,43 @@
         }
       ],
       "unicorn/prefer-node-protocol": "off",
-      "unicorn/prevent-abbreviations": "off"
+      "unicorn/prevent-abbreviations": "off",
+      "import/order": [
+        "error",
+        {
+          "groups": [
+            "builtin",
+            "external",
+            "internal",
+            "parent",
+            "sibling",
+            "index",
+            "object",
+            "type"
+          ],
+          "pathGroups": [
+            {
+              "pattern": "ava",
+              "group": "external",
+              "position": "before"
+            },
+            {
+              "pattern": "#module",
+              "group": "index",
+              "position": "after"
+            }
+          ],
+          "pathGroupsExcludedImportTypes": [],
+          "distinctGroup": true,
+          "newlines-between": "always",
+          "alphabetize": {
+            "order": "asc",
+            "orderImportKind": "asc",
+            "caseInsensitive": false
+          },
+          "warnOnUnassignedImports": true
+        }
+      ]
     },
     "overrides": [
       {
