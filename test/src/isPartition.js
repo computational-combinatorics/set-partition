@@ -2,8 +2,8 @@ import test from 'ava';
 
 import {iter} from '@iterable-iterator/iter';
 import {list} from '@iterable-iterator/list';
-import {range} from '@iterable-iterator/range';
 import {map} from '@iterable-iterator/map';
+import {range} from '@iterable-iterator/range';
 
 import {isPartition} from '#module';
 
