@@ -3,7 +3,7 @@ import test from 'ava';
 import {list} from '@iterable-iterator/list';
 import {range} from '@iterable-iterator/range';
 import {map} from '@iterable-iterator/map';
-import {enumerate} from '../../src/index.js';
+import {enumerate} from '#module';
 
 const macro = (t, n, expected) => {
 	const elements = range(n);

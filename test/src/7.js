@@ -3,7 +3,7 @@ import test from 'ava';
 import totalOrder from 'total-order';
 import {RedBlackTree} from '@binary-search-tree/red-black-tree';
 
-import {enumerate, _count, isPartition} from '../../src/index.js';
+import {enumerate, _count, isPartition} from '#module';
 
 test('Check partitions of [7]', (t) => {
 	const set = [1, 2, 3, 4, 5, 6, 7];
