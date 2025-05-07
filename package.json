@@ -73,7 +73,7 @@
   },
   "devDependencies": {
     "@babel/core": "7.27.1",
-    "@babel/preset-env": "7.27.1",
+    "@babel/preset-env": "7.27.2",
     "@binary-search-tree/red-black-tree": "10.0.1",
     "@commitlint/cli": "19.8.0",
     "@iterable-iterator/iter": "1.0.1",
